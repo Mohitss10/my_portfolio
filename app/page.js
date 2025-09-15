@@ -1,103 +1,299 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import React from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { ArrowUpRight, LinkIcon } from "lucide-react";
+import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
+import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiMongodb,
+  SiGithub,
+} from "react-icons/si";
+
+export default function CustomGrid3() {
+  const logos = [
+    <SiHtml5 className="text-gray-300 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" />,
+    <SiCss3 className="text-gray-300 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" />,
+    <SiJavascript className="text-gray-300 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" />,
+    <SiReact className="text-gray-300 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" />,
+    <SiNextdotjs className="text-gray-300 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" />,
+    <SiTailwindcss className="text-gray-300 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" />,
+    <SiNodedotjs className="text-gray-300 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" />,
+    <SiMongodb className="text-gray-300 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" />,
+    <SiGithub className="text-gray-300 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" />,
+  ];
+
+  // Animation Variants
+  const fadeFromLeft = {
+    hidden: { opacity: 0, x: -80 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.9, ease: "easeOut" },
+    },
+  };
+  const fadeFromRight = {
+    hidden: { opacity: 0, x: 80 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.9, ease: "easeOut" },
+    },
+  };
+  const fadeFromBottom = {
+    hidden: { opacity: 0, y: 80 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.9, ease: "easeOut" },
+    },
+  };
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 36, scale: 0.98 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { delay: i * 0.12, duration: 0.6, ease: "easeOut" },
+    }),
+  };
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div
+      className="
+    grid gap-3 rounded-2xl mx-1 my-0 sm:my-2 overflow-hidden
+    grid-cols-1 w-auto px-2
+    h-auto
+    sm:h-[85.5vh] sm:grid-cols-2 sm:grid-rows-4
+    md:grid-cols-4 md:grid-rows-4
+    lg:grid-cols-6 lg:grid-rows-6
+    xl:grid-cols-7 xl:grid-rows-7
+  "
+    >
+      {/* About (from left) */}
+      <motion.div
+        variants={fadeFromLeft}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className="relative bg-[#101626] h-[60vh] sm:h-auto col-span-1 row-span-1 
+          sm:col-span-2 md:col-span-2 lg:col-span-3 md:row-span-2 lg:row-span-4 
+          p-2 rounded-2xl flex flex-col cursor-pointer mt-1 sm:mt-0
+          transition-shadow duration-300 hover:shadow-xl hover:shadow-gray-900/50"
+      >
+        <Link
+          href="/about"
+          className="absolute inset-0 flex flex-col p-2 rounded-2xl"
+        >
+          <ArrowUpRight className="absolute text-gray-400 top-4 right-4 w-6 h-6 sm:w-8 sm:h-8" />
+          <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white">
+            Hello I'm Mohit
+          </span>
+          <div className="flex flex-col justify-end">
+            <span className="text-6xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mt-34 sm:mt-47 mb-5 text-white text-story-script">
+              Full Stack Developer
+            </span>
+            <span className="text-3xl sm:text-lg md:text-xl lg:text-2xl mb-2 text-white">
+              End-to-end development with a touch of creativity.
+            </span>
+          </div>
+        </Link>
+      </motion.div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Projects (from right) */}
+      <motion.div
+        variants={fadeFromRight}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className="relative bg-[#101626] sm:h-auto col-span-1 row-span-1 
+          sm:row-span-2 md:col-span-2 lg:col-span-2 md:row-span-3 lg:row-span-6 
+          xl:col-start-6 xl:row-start-1 flex flex-col justify-between p-2 
+          text-lg sm:text-xl rounded-2xl h-[60vh] cursor-pointer
+          transition-shadow duration-300 hover:shadow-xl hover:shadow-gray-900/50"
+      >
+        <Link
+          href="/project"
+          className="absolute inset-0 flex flex-col justify-between p-2"
+        >
+          <ArrowUpRight className="absolute text-gray-400 top-2 right-2 w-6 h-6 sm:w-8 sm:h-8" />
+          <span className="text-xl sm:text-2xl text-white">Projects</span>
+          <div className="gap-2 flex flex-col w-full">
+            {/* AIMatrix */}
+            <div className="p-2 bg-gray-800 rounded-2xl">
+              <h3 className="text-4xl font-bold">AIMatrix</h3>
+              <div className="flex items-center justify-between">
+                <p className="text-xl">AI SaaS web app</p>
+                <a
+                  href="https://your-aimatrix-link.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative group"
+                >
+                  <LinkIcon className="w-4 h-6 sm:w-4 sm:h-4 hover:text-slate-600 transition-colors" />
+                  {/* Tooltip */}
+                  <span className="absolute -left-6 bottom-0 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-600">
+                    Link
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            {/* Netflix Clone */}
+            <div className="p-2 bg-gray-800 rounded-2xl">
+              <h3 className="text-4xl font-bold">Netflix - Clone</h3>
+              <div className="flex items-center justify-between">
+                <p className="text-xl">Movie streaming platform</p>
+                <a
+                  href="https://your-netflix-clone-link.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative group"
+                >
+                  <LinkIcon className="w-4 h-6 sm:w-4 sm:h-4 hover:text-slate-600 transition-colors" />
+                  {/* Tooltip */}
+                  <span className="absolute -left-6 bottom-0 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-600">
+                    Link
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </Link>
+      </motion.div>
+
+      {/* Certificates (from bottom) */}
+      <motion.div
+        variants={fadeFromBottom}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className="relative bg-[#101626] h-[60vh] sm:h-auto col-span-1 row-span-1 
+          md:col-span-2 lg:col-span-3 md:row-span-2 lg:row-span-3 xl:col-start-3 
+          xl:row-start-5 flex flex-col p-2 text-lg sm:text-xl rounded-2xl cursor-pointer
+          transition-shadow duration-300 hover:shadow-xl hover:shadow-gray-900/50"
+      >
+        <Link href="/certification" className="absolute inset-0 flex flex-col p-2">
+          <ArrowUpRight className="absolute top-2 text-gray-400 right-2 w-6 h-6 sm:w-8 sm:h-8" />
+          <span className="text-xl sm:text-2xl">Certificates</span>
+          <div className="parent grid grid-cols-1 sm:grid-cols-5 sm:grid-rows-2 gap-2 mt-30 w-full h-full">
+            <div className="bg-gray-800 sm:col-span-3 flex items-center justify-center rounded-xl">
+              Prompt Engineering
+            </div>
+            <div className="bg-gray-800 sm:col-span-2 flex items-center justify-center rounded-xl">
+              JavaScript
+            </div>
+            <div className="bg-gray-800 sm:col-span-2 sm:row-start-2 flex items-center justify-center rounded-xl">
+              TCS-icon
+            </div>
+            <div className="bg-gray-800 sm:col-span-3 sm:col-start-3 sm:row-start-2 flex items-center justify-center rounded-xl">
+              HTML , CSS & Javascript
+            </div>
+          </div>
+        </Link>
+      </motion.div>
+
+      {/* Skills (fadeInUp) */}
+      <motion.div
+        custom={3}
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className="relative bg-[#101626] h-[60vh] sm:h-auto col-span-1 row-span-1 
+          md:col-span-2 lg:col-span-2 md:row-span-2 lg:row-span-4 xl:col-start-4 
+          xl:row-start-1 flex flex-col justify-between p-2 text-lg sm:text-xl 
+          rounded-2xl cursor-pointer overflow-hidden
+          transition-shadow duration-300 hover:shadow-xl hover:shadow-gray-900/50"
+      >
+        <Link
+          href="/skills"
+          className="absolute inset-0 flex flex-col justify-between p-2"
+        >
+          <ArrowUpRight className="absolute top-2 text-gray-400 right-2 w-6 h-6 sm:w-8 sm:h-8" />
+          <span className="text-xl sm:text-2xl text-white">Skills</span>
+          <div className="relative mt-6 mb-7 w-full overflow-hidden">
+            <div className="absolute left-0 top-0 h-full w-12 sm:w-16 bg-gradient-to-r from-[#101626] to-transparent z-10" />
+            <div className="absolute right-0 top-0 h-full w-12 sm:w-16 bg-gradient-to-l from-[#101626] to-transparent z-10" />
+            <div className="flex animate-scroll space-x-6 sm:space-x-8 w-max">
+              {logos.concat(logos).map((icon, index) => (
+                <div key={index} className="flex items-center justify-center">
+                  {icon}
+                </div>
+              ))}
+            </div>
+          </div>
+        </Link>
+      </motion.div>
+
+      {/* Socials (from right) */}
+      <motion.div
+        variants={fadeFromRight}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className="relative bg-[#101626] h-[15vh] sm:h-auto col-span-1 row-span-1 
+          md:col-span-1 lg:col-span-2 xl:col-start-6 xl:row-start-7 flex flex-col 
+          items-center justify-center text-lg sm:text-xl font-bold rounded-2xl p-2
+          transition-shadow duration-300 hover:shadow-xl hover:shadow-gray-900/50"
+      >
+        <div className="flex space-x-6 sm:space-x-8">
+          {/* Instagram */}
+          <div className="relative group">
+            <FaInstagram className="w-6 h-6 sm:w-8 sm:h-8 hover:text-pink-500 transition-colors cursor-pointer" />
+            <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 group-hover:opacity-100 transition-all duration-600">
+              Instagram
+            </span>
+          </div>
+
+          {/* GitHub */}
+          <div className="relative group">
+            <FaGithub className="w-6 h-6 sm:w-8 sm:h-8 hover:text-gray-400 transition-colors cursor-pointer" />
+            <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 group-hover:opacity-100 transition-all duration-600">
+              GitHub
+            </span>
+          </div>
+
+          {/* LinkedIn */}
+          <div className="relative group">
+            <FaLinkedin className="w-6 h-6 sm:w-8 sm:h-8 hover:text-blue-500 transition-colors cursor-pointer" />
+            <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 group-hover:opacity-100 transition-all duration-600">
+              LinkedIn
+            </span>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </motion.div>
+
+      {/* Contact (from bottom) */}
+      <motion.div
+        variants={fadeFromBottom}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className="relative bg-[#101626] h-[30vh] sm:h-auto col-span-1 row-span-1 
+          md:col-span-2 lg:col-span-2 md:row-span-2 lg:row-span-3 xl:col-start-1 
+          xl:row-start-5 flex flex-col p-2 text-lg justify-between sm:text-xl rounded-2xl cursor-pointer
+          transition-shadow duration-300 hover:shadow-xl hover:shadow-gray-900/50"
+      >
+        <Link
+          href="/contact"
+          className="absolute inset-0 flex flex-col p-2 justify-between"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <ArrowUpRight className="absolute text-gray-400 top-2 right-2 w-6 h-6 sm:w-8 sm:h-8" />
+          <span className="text-xl sm:text-2xl text-white">Contact</span>
+          <div>
+            <span className="text-5xl">Let’s collaborate</span>
+            <p>— your idea + my code = something amazing.</p>
+          </div>
+        </Link>
+      </motion.div>
     </div>
   );
 }

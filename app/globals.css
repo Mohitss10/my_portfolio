@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Story+Script&display=swap');
 @import "tailwindcss";
 
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #060D1D;   /* 🔥 forced global background */
+  --foreground: #D3D3D3;   /* light text for contrast */
 }
 
 @theme inline {
@@ -12,15 +14,49 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Optional: if you still want dark mode responsiveness */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #060D1D;  /* stays the same dark gray */
+    --foreground: #D3D3D3;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Dosis", sans-serif;;
+}
+
+.story-font {
+  font-family: "Story Script", sans-serif;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  display: flex;
+  animation: scroll 15s linear infinite;
+}
+
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px; /* thin */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* optional */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #6b7280; /* Tailwind gray-500 */
+  border-radius: 9999px;
 }
