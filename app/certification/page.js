@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -21,18 +20,17 @@ const item = {
 
 const Page = () => {
   return (
-   <motion.div
-  variants={container}
-  initial="hidden"
-  animate="visible"
-  className="mx-3 sm:mt-2 my-0 rounded-2xl grid gap-2
+    <motion.div
+      variants={container}
+      initial="hidden"
+      animate="visible"
+      className="mx-3 sm:mt-2 my-0 rounded-2xl grid gap-2
     h-auto md:h-[85.5vh]   
     grid-cols-1 
     sm:grid-cols-2 
     md:grid-cols-6 md:grid-rows-6
     overflow-visible md:overflow-hidden"
->
-
+    >
       {/* Box 1 */}
       <motion.div
         variants={item}
