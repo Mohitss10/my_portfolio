@@ -18,16 +18,17 @@ import {
 } from "react-icons/si";
 
 export default function CustomGrid3() {
+  // ✅ Store metadata instead of JSX
   const logos = [
-    <SiHtml5 className="text-gray-300 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" />,
-    <SiCss3 className="text-gray-300 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" />,
-    <SiJavascript className="text-gray-300 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" />,
-    <SiReact className="text-gray-300 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" />,
-    <SiNextdotjs className="text-gray-300 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" />,
-    <SiTailwindcss className="text-gray-300 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" />,
-    <SiNodedotjs className="text-gray-300 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" />,
-    <SiMongodb className="text-gray-300 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" />,
-    <SiGithub className="text-gray-300 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" />,
+    { id: "html", Icon: SiHtml5 },
+    { id: "css", Icon: SiCss3 },
+    { id: "js", Icon: SiJavascript },
+    { id: "react", Icon: SiReact },
+    { id: "next", Icon: SiNextdotjs },
+    { id: "tailwind", Icon: SiTailwindcss },
+    { id: "node", Icon: SiNodedotjs },
+    { id: "mongo", Icon: SiMongodb },
+    { id: "github", Icon: SiGithub },
   ];
 
   // Animation Variants
@@ -138,7 +139,6 @@ export default function CustomGrid3() {
                   className="relative group"
                 >
                   <LinkIcon className="w-4 h-6 sm:w-4 sm:h-4 hover:text-slate-600 transition-colors" />
-                  {/* Tooltip */}
                   <span className="absolute -left-6 bottom-0 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-600">
                     Link
                   </span>
@@ -158,7 +158,6 @@ export default function CustomGrid3() {
                   className="relative group"
                 >
                   <LinkIcon className="w-4 h-6 sm:w-4 sm:h-4 hover:text-slate-600 transition-colors" />
-                  {/* Tooltip */}
                   <span className="absolute -left-6 bottom-0 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-600">
                     Link
                   </span>
@@ -223,9 +222,12 @@ export default function CustomGrid3() {
             <div className="absolute left-0 top-0 h-full w-12 sm:w-16 bg-gradient-to-r from-[#101626] to-transparent z-10" />
             <div className="absolute right-0 top-0 h-full w-12 sm:w-16 bg-gradient-to-l from-[#101626] to-transparent z-10" />
             <div className="flex animate-scroll space-x-6 sm:space-x-8 w-max">
-              {logos.concat(logos).map((icon, index) => (
-                <div key={index} className="flex items-center justify-center">
-                  {icon}
+              {logos.concat(logos).map((item, index) => (
+                <div
+                  key={`${item.id}-${index}`}
+                  className="flex items-center justify-center"
+                >
+                  <item.Icon className="text-gray-300 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" />
                 </div>
               ))}
             </div>
@@ -245,23 +247,18 @@ export default function CustomGrid3() {
           transition-shadow duration-300 hover:shadow-xl hover:shadow-gray-900/50"
       >
         <div className="flex space-x-6 sm:space-x-8">
-          {/* Instagram */}
           <div className="relative group">
             <FaInstagram className="w-6 h-6 sm:w-8 sm:h-8 hover:text-pink-500 transition-colors cursor-pointer" />
             <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 group-hover:opacity-100 transition-all duration-600">
               Instagram
             </span>
           </div>
-
-          {/* GitHub */}
           <div className="relative group">
             <FaGithub className="w-6 h-6 sm:w-8 sm:h-8 hover:text-gray-400 transition-colors cursor-pointer" />
             <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 group-hover:opacity-100 transition-all duration-600">
               GitHub
             </span>
           </div>
-
-          {/* LinkedIn */}
           <div className="relative group">
             <FaLinkedin className="w-6 h-6 sm:w-8 sm:h-8 hover:text-blue-500 transition-colors cursor-pointer" />
             <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 group-hover:opacity-100 transition-all duration-600">
