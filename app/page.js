@@ -120,52 +120,39 @@ export default function CustomGrid3() {
           text-lg sm:text-xl rounded-2xl h-[60vh] cursor-pointer
           transition-shadow duration-300 hover:shadow-xl hover:shadow-gray-900/50"
       >
-        <Link
-          href="/project"
-          className="absolute inset-0 flex flex-col justify-between p-2"
-        >
-          <ArrowUpRight className="absolute text-gray-400 top-2 right-2 w-6 h-6 sm:w-8 sm:h-8" />
-          <span className="text-xl sm:text-2xl text-white">Projects</span>
-          <div className="gap-2 flex flex-col w-full">
-            {/* AIMatrix */}
-            <div className="p-2 bg-gray-800 rounded-2xl">
-              <h3 className="text-4xl font-bold">AIMatrix</h3>
-              <div className="flex items-center justify-between">
-                <p className="text-xl">AI SaaS web app</p>
-                <a
-                  href="https://your-aimatrix-link.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative group"
-                >
-                  <LinkIcon className="w-4 h-6 sm:w-4 sm:h-4 hover:text-slate-600 transition-colors" />
-                  <span className="absolute -left-6 bottom-0 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-600">
-                    Link
-                  </span>
-                </a>
-              </div>
-            </div>
+        {/* Wrapper only for internal navigation */}
+<Link
+  href="/project"
+  className="absolute inset-0 flex flex-col justify-between p-2"
+>
+  <ArrowUpRight className="absolute text-gray-400 top-2 right-2 w-6 h-6 sm:w-8 sm:h-8" />
+  <span className="text-xl sm:text-2xl text-white">Projects</span>
 
-            {/* Netflix Clone */}
-            <div className="p-2 bg-gray-800 rounded-2xl">
-              <h3 className="text-4xl font-bold">Netflix - Clone</h3>
-              <div className="flex items-center justify-between">
-                <p className="text-xl">Movie streaming platform</p>
-                <a
-                  href="https://your-netflix-clone-link.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative group"
-                >
-                  <LinkIcon className="w-4 h-6 sm:w-4 sm:h-4 hover:text-slate-600 transition-colors" />
-                  <span className="absolute -left-6 bottom-0 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-600">
-                    Link
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </Link>
+  <div className="gap-2 flex flex-col w-full">
+    {/* AIMatrix */}
+    <div className="p-2 bg-gray-800 rounded-2xl">
+      <h3 className="text-4xl font-bold">AIMatrix</h3>
+      <div className="flex items-center justify-between">
+        <p className="text-xl">AI SaaS web app</p>
+
+        {/* ✅ External link should NOT be inside <Link> */}
+        <button
+          onClick={(e) => {
+            e.stopPropagation(); // prevent /project navigation
+            window.open("https://your-aimatrix-link.com", "_blank", "noopener,noreferrer");
+          }}
+          className="relative group"
+        >
+          <LinkIcon className="w-4 h-6 sm:w-4 sm:h-4 hover:text-slate-600 transition-colors" />
+          <span className="absolute -left-6 bottom-0 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-600">
+            Link
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</Link>
+
       </motion.div>
 
       {/* Certificates (from bottom) */}
