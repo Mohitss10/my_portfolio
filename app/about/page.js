@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image"; // ✅ import Next.js Image
 
 // Parent container animation
 const containerVariant = {
@@ -71,9 +72,11 @@ const Page = () => {
         "
       >
         {/* Image */}
-        <img
+        <Image
           src="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fh68x0up43hmknl5tjcww.jpg"
           alt="Software Developer"
+          width={1000} // ✅ must provide width
+          height={420} // ✅ must provide height
           className="w-full h-[35vh] object-cover rounded-lg"
         />
 

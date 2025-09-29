@@ -1,7 +1,8 @@
-"use client"; // ⬅️ Add this at the very top
+"use client";
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image"; // ✅ Next.js Image import
 
 // Parent animation (stagger)
 const container = {
@@ -39,9 +40,14 @@ const Page = () => {
         className="bg-[#101626] rounded-2xl overflow-hidden 
           h-[40vh] md:h-auto
           col-span-1 
-          md:col-span-2 md:row-span-3"
+          md:col-span-2 md:row-span-3 relative"
       >
-        <img src="2.jpg" alt="Box 1" className="w-full h-full object-cover" />
+        <Image
+          src="/2.jpg" // ✅ stored inside public/ folder
+          alt="Box 1"
+          fill
+          className="object-cover"
+        />
       </motion.div>
 
       {/* Box 2 */}
@@ -50,9 +56,14 @@ const Page = () => {
         className="bg-[#101626] rounded-2xl overflow-hidden 
           h-[40vh] md:h-auto
           col-span-1 
-          md:col-span-2 md:row-span-3 md:col-start-3"
+          md:col-span-2 md:row-span-3 md:col-start-3 relative"
       >
-        <img src="1.jpg" alt="Box 2" className="w-full h-full object-cover" />
+        <Image
+          src="/1.jpg"
+          alt="Box 2"
+          fill
+          className="object-cover"
+        />
       </motion.div>
 
       {/* Box 3 */}
@@ -61,9 +72,14 @@ const Page = () => {
         className="bg-[#101626] rounded-2xl overflow-hidden 
           h-[40vh] md:h-auto
           col-span-1 
-          md:col-span-2 md:row-span-3 md:col-start-5"
+          md:col-span-2 md:row-span-3 md:col-start-5 relative"
       >
-        <img src="3.jpg" alt="Box 3" className="w-full h-full object-cover" />
+        <Image
+          src="/3.jpg"
+          alt="Box 3"
+          fill
+          className="object-cover"
+        />
       </motion.div>
 
       {/* Box 4 */}
@@ -72,9 +88,14 @@ const Page = () => {
         className="bg-[#101626] rounded-2xl overflow-hidden 
           h-[40vh] md:h-auto
           col-span-1 
-          md:col-span-2 md:row-span-3 md:row-start-4"
+          md:col-span-2 md:row-span-3 md:row-start-4 relative"
       >
-        <img src="2.jpg" alt="Box 4" className="w-full h-full object-cover" />
+        <Image
+          src="/2.jpg"
+          alt="Box 4"
+          fill
+          className="object-cover"
+        />
       </motion.div>
 
       {/* Box 5 */}
@@ -83,9 +104,14 @@ const Page = () => {
         className="bg-[#101626] rounded-2xl overflow-hidden 
           h-[40vh] md:h-auto
           col-span-1 
-          md:col-span-2 md:row-span-3 md:col-start-3 md:row-start-4"
+          md:col-span-2 md:row-span-3 md:col-start-3 md:row-start-4 relative"
       >
-        <img src="1.jpg" alt="Box 5" className="w-full h-full object-cover" />
+        <Image
+          src="/1.jpg"
+          alt="Box 5"
+          fill
+          className="object-cover"
+        />
       </motion.div>
     </motion.div>
   );

@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { LinkIcon } from "lucide-react";
 
@@ -33,15 +34,19 @@ const Page = () => {
         animate="visible"
       >
         {/* Box 1 */}
- <motion.div
+        <motion.div
           variants={boxVariant}
-          className="bg-[#101626] rounded-2xl col-span-2 row-span-6 flex flex-col p-2 overflow-hidden h-[84vh] "
+          className="bg-[#101626] rounded-2xl col-span-2 row-span-6 flex flex-col p-2 overflow-hidden h-[84vh]"
         >
-          <img
-            src="ai.png"
-            alt="Description"
-            className="object-cover h-[40vh] w-full rounded-2xl mb-4"
-          />
+          <div className="relative w-full h-[40vh] mb-4 rounded-2xl overflow-hidden">
+            <Image
+              src="/ai.png"
+              alt="AI Matrix Preview"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
 
           {/* Content wrapper grows to push footer down */}
           <div className="text-white flex flex-col flex-1">
@@ -64,22 +69,24 @@ const Page = () => {
         {/* Box 2 */}
         <motion.div
           variants={boxVariant}
-          className="bg-[#101626] rounded-2xl col-span-2 row-span-6 flex flex-col p-2 overflow-hidden h-[84vh] "
+          className="bg-[#101626] rounded-2xl col-span-2 row-span-6 flex flex-col p-2 overflow-hidden h-[84vh]"
         >
-          <img
-            src="ai.png"
-            alt="Description"
-            className="object-cover h-[40vh] w-full rounded-2xl mb-4"
-          />
+          <div className="relative w-full h-[40vh] mb-4 rounded-2xl overflow-hidden">
+            <Image
+              src="/ai.png"
+              alt="Netflix Clone Preview"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
 
           {/* Content wrapper grows to push footer down */}
           <div className="text-white flex flex-col flex-1">
-            <span className="text-4xl font-bold mb-3">AIMatrix</span>
+            <span className="text-4xl font-bold mb-3">Netflix Clone</span>
             <p className="text-base leading-relaxed flex-1">
-              This AI SaaS app offers a suite of productivity tools including
-              article and blog generation, image creation, background removal,
-              object removal, and resume reviewing. Designed to save time and
-              enhance creativity for writers, designers, and professionals.
+              A sleek Netflix clone app showcasing trending movies, clean UI,
+              and interactive user experience.
             </p>
 
             {/* Footer stays at bottom */}
@@ -101,11 +108,14 @@ const Page = () => {
           transition={{ delay: 0.1 }}
           className="bg-[#101626] rounded-2xl p-2 flex flex-col text-white"
         >
-          <img
-            src="ai.png"
-            alt="Description"
-            className="object-cover h-[30vh] rounded-xl w-full mb-3"
-          />
+          <div className="relative w-full h-[30vh] mb-3 rounded-xl overflow-hidden">
+            <Image
+              src="/ai.png"
+              alt="AI Matrix Mobile Preview"
+              fill
+              className="object-cover"
+            />
+          </div>
           <div className="flex flex-col gap-2">
             <span className="text-2xl font-semibold">AIMatrix</span>
             <p className="text-sm leading-relaxed">
@@ -128,11 +138,14 @@ const Page = () => {
           transition={{ delay: 0.2 }}
           className="bg-[#101626] rounded-2xl p-2 flex flex-col text-white"
         >
-          <img
-            src="ai.png"
-            alt="Description"
-            className="object-cover h-[30vh] rounded-xl w-full mb-3"
-          />
+          <div className="relative w-full h-[30vh] mb-3 rounded-xl overflow-hidden">
+            <Image
+              src="/ai.png"
+              alt="Netflix Clone Mobile Preview"
+              fill
+              className="object-cover"
+            />
+          </div>
           <div className="flex flex-col gap-2">
             <span className="text-2xl font-semibold">Netflix - Clone</span>
             <p className="text-sm leading-relaxed">
