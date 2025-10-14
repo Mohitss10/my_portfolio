@@ -45,20 +45,10 @@ const Page = () => {
         "
       >
         <p className="text-base sm:text-xl leading-relaxed text-gray-200 mb-4">
-          Hello my name is Mohit, I am a final year Computer Science and Engineering student currently
-          pursuing a B.Tech degree at G.H. Raisoni Institute of Engineering.
-          Over the years, I have built a strong foundation in programming,
-          with C++ being my core language. This has allowed me to sharpen my
-          problem-solving skills and develop a structured approach to writing
-          clean and efficient code.
+Hello, my name is Mohit. I am a final-year Computer Science and Engineering student, currently pursuing a B.Tech degree at G.H. Raisoni Institute of Engineering. Over the years, I have built a strong foundation in programming, with C++ as my core language. This has allowed me to sharpen my problem-solving skills and develop a structured approach to writing clean and efficient code.
         </p>
         <p className="text-base sm:text-xl leading-relaxed text-gray-200">
-          Alongside academics, I focus heavily on web development, which has
-          become my primary domain. I enjoy designing responsive,
-          user-friendly, and performance-driven websites that provide seamless
-          experiences. Recently, I have also started integrating Artificial
-          Intelligence into my projects, with the goal of building smart,
-          adaptive, and future-ready web applications.
+          Alongside academics, I focus heavily on web development, which has become my primary domain. I enjoy designing responsive, user-friendly, and performance-driven websites that provide seamless experiences. Recently, I have also started integrating Artificial Intelligence into my projects, with the goal of building smart, adaptive, and future-ready web applications.
         </p>
       </motion.div>
 
@@ -91,13 +81,15 @@ const Page = () => {
           </p>
 
           {/* Resume Download Button */}
-          <a
-            href="/resume.pdf"
-            download
-            className="mt-3 px-5 py-3 bg-[#081c3999] hover:bg-gray-700 text-white rounded-lg transition w-full text-center"
-          >
-            Download Resume
-          </a>
+<a
+  href="https://drive.google.com/uc?export=download&id=1wRSC0rRAD_NAIIv5LR_SZ_Yg99ED5zvf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-3 px-5 py-3 bg-[#081c3999] hover:bg-gray-700 text-white rounded-lg transition w-full text-center"
+>
+  Download Resume
+</a>
+
         </motion.div>
       </motion.div>
     </motion.div>

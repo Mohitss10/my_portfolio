@@ -48,7 +48,7 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/mohit-gawande-774402253"
                   className="block py-2 px-3 md:p-0 hover:text-[#6b6b6b]"
                 >
                   LinkedIn
@@ -56,7 +56,7 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://github.com/Mohitss10"
                   className="block py-2 px-3 md:p-0 hover:text-[#6b6b6b]"
                 >
                   Github
@@ -112,7 +112,7 @@ const Navbar = () => {
           {/* LinkedIn - external link */}
           <li>
             <a
-              href="https://www.linkedin.com/in/your-profile"
+              href="https://www.linkedin.com/in/mohit-gawande-774402253"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setSidebarOpen(false)}
@@ -125,7 +125,7 @@ const Navbar = () => {
           {/* GitHub - external link */}
           <li>
             <a
-              href="https://github.com/your-username"
+              href="https://github.com/Mohitss10"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setSidebarOpen(false)}

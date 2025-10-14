@@ -37,7 +37,7 @@ export default function Page() {
           h-[40vh] md:h-auto
           col-span-1 md:col-span-2 md:row-span-3"
       >
-        <img src="/2.jpg" alt="Box 1" className="w-full h-full object-cover" />
+        <img src="/js.png" alt="Box 1" className="w-full h-full object-cover" />
       </motion.div>
 
       {/* Box 2 */}
@@ -47,7 +47,7 @@ export default function Page() {
           h-[40vh] md:h-auto
           col-span-1 md:col-span-2 md:row-span-3 md:col-start-3"
       >
-        <img src="/1.jpg" alt="Box 2" className="w-full h-full object-cover" />
+        <img src="/tcs.png" alt="Box 2" className="w-full h-full object-cover" />
       </motion.div>
 
       {/* Box 3 */}
@@ -57,28 +57,19 @@ export default function Page() {
           h-[40vh] md:h-auto
           col-span-1 md:col-span-2 md:row-span-3 md:col-start-5"
       >
-        <img src="/3.jpg" alt="Box 3" className="w-full h-full object-cover" />
+        <img src="/udemy.png" alt="Box 3" className="w-full h-full object-cover" />
       </motion.div>
 
-      {/* Box 4 */}
+      
       <motion.div
         variants={item}
         className="bg-[#081c3999] rounded-2xl overflow-hidden 
           h-[40vh] md:h-auto
           col-span-1 md:col-span-2 md:row-span-3 md:row-start-4"
       >
-        <img src="/2.jpg" alt="Box 4" className="w-full h-full object-cover" />
-      </motion.div>
+        <img src="/prompt.jpg" alt="Box 4" className="w-full h-full object-cover" />
+      </motion.div> 
 
-      {/* Box 5 */}
-      <motion.div
-        variants={item}
-        className="bg-[#081c3999] rounded-2xl overflow-hidden 
-          h-[40vh] md:h-auto
-          col-span-1 md:col-span-2 md:row-span-3 md:col-start-3 md:row-start-4"
-      >
-        <img src="/1.jpg" alt="Box 5" className="w-full h-full object-cover" />
-      </motion.div>
     </motion.div>
   );
 }

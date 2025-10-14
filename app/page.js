@@ -35,15 +35,27 @@ export default function CustomGrid3() {
   // ✅ Animations
   const fadeFromLeft = {
     hidden: { opacity: 0, x: -80 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.9, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.9, ease: "easeOut" },
+    },
   };
   const fadeFromRight = {
     hidden: { opacity: 0, x: 80 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.9, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.9, ease: "easeOut" },
+    },
   };
   const fadeFromBottom = {
     hidden: { opacity: 0, y: 80 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.9, ease: "easeOut" },
+    },
   };
   const fadeInUp = {
     hidden: { opacity: 0, y: 36, scale: 0.98 },
@@ -56,7 +68,7 @@ export default function CustomGrid3() {
   };
 
   return (
-     <div
+    <div
       className="grid gap-3 rounded-2xl mx-1 my-0 sm:my-2 overflow-hidden mb-4
         grid-cols-1 w-auto px-2
         h-auto sm:h-[85.5vh] sm:grid-cols-2 sm:grid-rows-4
@@ -94,7 +106,6 @@ export default function CustomGrid3() {
         </Link>
       </motion.div>
 
-
       {/* 💻 Projects Section */}
       <motion.div
         variants={fadeFromRight}
@@ -107,7 +118,10 @@ export default function CustomGrid3() {
           text-lg sm:text-xl rounded-2xl h-[60vh] cursor-pointer
           "
       >
-        <Link href="/project" className="absolute inset-0 flex flex-col justify-between p-2">
+        <Link
+          href="/project"
+          className="absolute inset-0 flex flex-col justify-between p-2"
+        >
           <ArrowUpRight className="absolute hover:text-[#6b6b6b] top-2 right-2 w-6 h-6 sm:w-8 sm:h-8" />
           <span className="text-3xl  sm:text-2xl text-white">Projects</span>
           <div className="gap-2 flex flex-col w-full">
@@ -119,7 +133,11 @@ export default function CustomGrid3() {
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
-                    window.open("https://your-aimatrix-link.com", "_blank", "noopener,noreferrer");
+                    window.open(
+                      "https://aimatrix-client.onrender.com",
+                      "_blank",
+                      "noopener,noreferrer"
+                    );
                   }}
                   className="relative group"
                 >
@@ -139,7 +157,11 @@ export default function CustomGrid3() {
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
-                    window.open("https://your-netflix-clone-link.com", "_blank", "noopener,noreferrer");
+                    window.open(
+                      "https://mohitss10.github.io/Netflix-Clone/",
+                      "_blank",
+                      "noopener,noreferrer"
+                    );
                   }}
                   className="relative group"
                 >
@@ -154,38 +176,49 @@ export default function CustomGrid3() {
         </Link>
       </motion.div>
 
-       <motion.div
-        variants={fadeFromBottom}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        className="relative bg-[#0A192F99] h-[60vh] sm:h-auto col-span-1 row-span-1 
-          md:col-span-2 lg:col-span-3 md:row-span-2 lg:row-span-3 xl:col-start-3 
-          xl:row-start-5 flex flex-col justify-between p-2 text-lg sm:text-xl rounded-2xl cursor-pointer
-         "
-      >
-        <Link href="/certification" className="flex flex-col justify-between h-full">
-          <div>
-            <ArrowUpRight className="absolute top-2 hover:text-[#6b6b6b] right-2 w-6 h-6 sm:w-8 sm:h-8" />
-            <span className="text-3xl sm:text-2xl text-white mb-4">Certificates</span>
-          </div>
+<motion.div
+  variants={fadeFromBottom}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}
+  className="relative bg-[#0A192F99] h-[60vh] sm:h-auto col-span-1 row-span-1 
+    md:col-span-2 lg:col-span-3 md:row-span-2 lg:row-span-3 xl:col-start-3 
+    xl:row-start-5 flex flex-col justify-between p-2 text-lg sm:text-xl rounded-2xl cursor-pointer
+  "
+>
+  <Link href="/certification" className="flex flex-col justify-between h-full">
+    <div>
+      {/* Top-right arrow */}
+      <ArrowUpRight className="absolute top-2 right-2 hover:text-[#6b6b6b] w-6 h-6 sm:w-8 sm:h-8" />
 
-          <div className="grid grid-cols-1 sm:grid-cols-5 sm:grid-rows-2 gap-2 w-full">
-            <div className="bg-[#081c3999] sm:col-span-3 flex items-center justify-center rounded-xl py-4">
-              Prompt Engineering
-            </div>
-            <div className="bg-[#081c3999] sm:col-span-2 flex items-center justify-center rounded-xl py-4">
-              JavaScript
-            </div>
-            <div className="bg-[#081c3999] sm:col-span-2 sm:row-start-2 flex items-center justify-center rounded-xl py-4">
-              TCS Icon
-            </div>
-            <div className="bg-[#081c3999] sm:col-span-3 sm:col-start-3 sm:row-start-2 flex items-center justify-center rounded-xl py-4">
-              HTML, CSS & JS
-            </div>
-          </div>
-        </Link>
-      </motion.div>
+      {/* Section title */}
+      <span className="text-3xl sm:text-2xl text-white mb-4">Certificates</span>
+    </div>
+
+    {/* Certificates grid */}
+    <div className="grid grid-cols-1 sm:grid-cols-3 sm:grid-rows-2 gap-2 w-full">
+      <div className="relative bg-[#081c3999] flex items-center justify-center rounded-xl py-4">
+        Prompt Engineering
+        <LinkIcon className="absolute bottom-2 right-2 w-5 h-5 hover:text-[#6b6b6b]" />
+      </div>
+
+      <div className="relative bg-[#081c3999] sm:col-span-2 flex items-center justify-center rounded-xl py-4">
+        JavaScript
+        <LinkIcon className="absolute bottom-2 right-2 w-5 h-5 hover:text-[#6b6b6b]" />
+      </div>
+
+      <div className="relative bg-[#081c3999] sm:col-span-2 sm:row-start-2 flex items-center justify-center rounded-xl py-4">
+        TCS Icon
+        <LinkIcon className="absolute bottom-2 right-2 w-5 h-5 hover:text-[#6b6b6b]" />
+      </div>
+
+      <div className="relative bg-[#081c3999] sm:col-span-3 sm:col-start-3 sm:row-start-2 flex items-center justify-center rounded-xl py-4">
+        HTML, CSS & JS
+        <LinkIcon className="absolute bottom-2 right-2 w-5 h-5 hover:text-[#6b6b6b]" />
+      </div>
+    </div>
+  </Link>
+</motion.div>
 
       {/* 🧠 Skills Section */}
       <motion.div
@@ -200,7 +233,10 @@ export default function CustomGrid3() {
           rounded-2xl cursor-pointer overflow-hidden
           "
       >
-        <Link href="/skills" className="absolute inset-0 flex flex-col justify-between p-2">
+        <Link
+          href="/skills"
+          className="absolute inset-0 flex flex-col justify-between p-2"
+        >
           <ArrowUpRight className="absolute top-2 hover:text-[#6b6b6b] right-2 w-6 h-6 sm:w-8 sm:h-8" />
           <span className="text-3xl sm:text-2xl text-white">Skills</span>
           <div className="relative mt-6 mb-7 w-full overflow-hidden">
@@ -208,7 +244,10 @@ export default function CustomGrid3() {
             <div className="absolute right-0 top-0 h-full w-12 sm:w-16 bg-gradient-to-l from-[#101626] to-transparent z-10" />
             <div className="flex animate-scroll space-x-6 sm:space-x-8 w-max">
               {logos.concat(logos).map((item, index) => (
-                <div key={`${item.id}-${index}`} className="flex items-center justify-center">
+                <div
+                  key={`${item.id}-${index}`}
+                  className="flex items-center justify-center"
+                >
                   <item.Icon className="text-gray-300 w-30 h-30 sm:w-16 sm:h-16 lg:w-20 lg:h-20" />
                 </div>
               ))}
@@ -217,57 +256,55 @@ export default function CustomGrid3() {
         </Link>
       </motion.div>
 
-      
-{/* 🌐 Socials Section */}
-<motion.div
-  variants={fadeFromRight}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true, amount: 0.2 }}
-  className="relative bg-[#0A192F99] h-[15vh] sm:h-auto col-span-1 row-span-1 
+      {/* 🌐 Socials Section */}
+      <motion.div
+        variants={fadeFromRight}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className="relative bg-[#0A192F99] h-[15vh] sm:h-auto col-span-1 row-span-1 
     md:col-span-1 lg:col-span-2 xl:col-start-6 xl:row-start-7 flex flex-col 
     items-center justify-center text-lg sm:text-xl font-bold rounded-2xl 
     p-4 sm:p-2 transition-shadow duration-300 hover:shadow-xl hover:shadow-gray-900/50"
->
-  <div className="flex space-x-8 sm:space-x-8">
-    <a
-      href="https://instagram.com"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="relative group"
-    >
-      <FaInstagram className="w-12 h-12 sm:w-8 sm:h-8 hover:text-pink-500 transition-colors" />
-      <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
-        Instagram
-      </span>
-    </a>
+      >
+        <div className="flex space-x-8 sm:space-x-8">
+          <a
+            href="https://www.instagram.com/mohit___s10/?__pwa=1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative group"
+          >
+            <FaInstagram className="w-12 h-12 sm:w-8 sm:h-8 hover:text-pink-500 transition-colors" />
+            <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
+              Instagram
+            </span>
+          </a>
 
-    <a
-      href="https://github.com"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="relative group"
-    >
-      <FaGithub className="w-12 h-12 sm:w-8 sm:h-8 hover:text-gray-400 transition-colors" />
-      <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
-        GitHub
-      </span>
-    </a>
+          <a
+            href="https://github.com/Mohitss10"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative group"
+          >
+            <FaGithub className="w-12 h-12 sm:w-8 sm:h-8 hover:text-gray-400 transition-colors" />
+            <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
+              GitHub
+            </span>
+          </a>
 
-    <a
-      href="https://linkedin.com"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="relative group"
-    >
-      <FaLinkedin className="w-12 h-12 sm:w-8 sm:h-8 hover:text-blue-500 transition-colors" />
-      <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
-        LinkedIn
-      </span>
-    </a>
-  </div>
-</motion.div>
-
+          <a
+            href="https://www.linkedin.com/in/mohit-gawande-774402253"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative group"
+          >
+            <FaLinkedin className="w-12 h-12 sm:w-8 sm:h-8 hover:text-blue-500 transition-colors" />
+            <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
+              LinkedIn
+            </span>
+          </a>
+        </div>
+      </motion.div>
 
       {/* 📩 Contact Section */}
       <motion.div
@@ -280,7 +317,10 @@ export default function CustomGrid3() {
           xl:row-start-5 flex flex-col p-2 text-lg justify-between sm:text-xl rounded-2xl cursor-pointer
           transition-shadow duration-300 hover:shadow-xl hover:shadow-gray-900/50"
       >
-        <Link href="/contact" className="absolute inset-0 flex flex-col p-2 justify-between">
+        <Link
+          href="/contact"
+          className="absolute inset-0 flex flex-col p-2 justify-between"
+        >
           <ArrowUpRight className="absolute hover:text-[#6b6b6b] top-2 right-2 w-6 h-6 sm:w-8 sm:h-8" />
           <span className="text-3xl sm:text-2xl text-white">Contact</span>
           <div>

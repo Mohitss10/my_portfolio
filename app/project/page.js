@@ -48,7 +48,6 @@ const Page = () => {
             />
           </div>
 
-          {/* Content wrapper grows to push footer down */}
           <div className="text-white flex flex-col flex-1">
             <span className="text-4xl font-bold mb-3">AIMatrix</span>
             <p className="text-base leading-relaxed flex-1">
@@ -58,10 +57,15 @@ const Page = () => {
               enhance creativity for writers, designers, and professionals.
             </p>
 
-            {/* Footer stays at bottom */}
             <div className="flex items-center mt-4 text-lg justify-between">
               <span>Check my work</span>
-              <LinkIcon className="w-6 h-6 hover:text-gray-400 cursor-pointer" />
+              <a
+                href="http://aimatrix-client.onrender.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <LinkIcon className="w-6 h-6 hover:text-gray-400 cursor-pointer" />
+              </a>
             </div>
           </div>
         </motion.div>
@@ -73,7 +77,7 @@ const Page = () => {
         >
           <div className="relative w-full h-[40vh] mb-4 rounded-2xl overflow-hidden">
             <Image
-              src="/ai.png"
+              src="/netflix.png"
               alt="Netflix Clone Preview"
               fill
               className="object-cover"
@@ -81,7 +85,6 @@ const Page = () => {
             />
           </div>
 
-          {/* Content wrapper grows to push footer down */}
           <div className="text-white flex flex-col flex-1">
             <span className="text-4xl font-bold mb-3">Netflix Clone</span>
             <p className="text-base leading-relaxed flex-1">
@@ -89,10 +92,15 @@ const Page = () => {
               and interactive user experience.
             </p>
 
-            {/* Footer stays at bottom */}
             <div className="flex items-center mt-4 text-lg justify-between">
               <span>Check my work</span>
-              <LinkIcon className="w-6 h-6 hover:text-gray-400 cursor-pointer" />
+              <a
+                href="https://mohitss10.github.io/Netflix-Clone/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <LinkIcon className="w-6 h-6 hover:text-gray-400 cursor-pointer" />
+              </a>
             </div>
           </div>
         </motion.div>
@@ -100,6 +108,7 @@ const Page = () => {
 
       {/* Mobile Grid */}
       <div className="grid sm:hidden gap-4 grid-cols-1">
+        {/* AIMatrix Mobile */}
         <motion.div
           variants={boxVariant}
           initial="hidden"
@@ -125,11 +134,18 @@ const Page = () => {
             </p>
             <div className="flex items-center mt-2 text-sm justify-between">
               <span>Check my work</span>
-              <LinkIcon className="w-4 h-4 hover:text-gray-400 cursor-pointer" />
+              <a
+                href="http://aimatrix-client.onrender.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <LinkIcon className="w-4 h-4 hover:text-gray-400 cursor-pointer" />
+              </a>
             </div>
           </div>
         </motion.div>
 
+        {/* Netflix Clone Mobile */}
         <motion.div
           variants={boxVariant}
           initial="hidden"
@@ -140,21 +156,27 @@ const Page = () => {
         >
           <div className="relative w-full h-[30vh] mb-3 rounded-xl overflow-hidden">
             <Image
-              src="/ai.png"
+              src="/netflix.png"
               alt="Netflix Clone Mobile Preview"
               fill
               className="object-cover"
             />
           </div>
           <div className="flex flex-col gap-2">
-            <span className="text-2xl font-semibold">Netflix - Clone</span>
+            <span className="text-2xl font-semibold">Netflix Clone</span>
             <p className="text-sm leading-relaxed">
               A sleek mobile-first Netflix clone with clean UI, showcasing
               trending movies and interactive user experience.
             </p>
             <div className="flex items-center mt-2 text-sm justify-between">
               <span>Check my work</span>
-              <LinkIcon className="w-4 h-4 hover:text-gray-400 cursor-pointer" />
+              <a
+                href="https://mohitss10.github.io/Netflix-Clone/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <LinkIcon className="w-4 h-4 hover:text-gray-400 cursor-pointer" />
+              </a>
             </div>
           </div>
         </motion.div>
