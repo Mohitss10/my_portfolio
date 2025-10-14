@@ -32,7 +32,7 @@ const Page = () => {
       className="
         grid gap-3 w-full
         grid-cols-1
-        sm:grid-cols-5 sm:grid-rows-5 sm:h-[85.5vh] px-3 sm:pt-2 overflow-hidden
+        sm:grid-cols-5 sm:grid-rows-5 sm:h-[85.5vh] px-3 sm:pt-2 overflow-hidden mb-3
       "
     >
       {/* Bio Section */}
@@ -66,8 +66,8 @@ const Page = () => {
       <motion.div
         variants={boxVariant}
         className="
-          bg-[#081c3999] p-2 rounded-lg
-          h-[40vh] sm:h-auto flex flex-col justify-between
+          bg-[#081c3999] p-3 rounded-lg
+           sm:h-auto flex flex-col justify-between
           sm:col-span-2 sm:row-span-5 sm:col-start-4 sm:row-start-1
         "
       >

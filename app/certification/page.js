@@ -28,7 +28,7 @@ export default function Page() {
         grid-cols-1 
         sm:grid-cols-2 
         md:grid-cols-6 md:grid-rows-6
-        overflow-visible md:overflow-hidden"
+        overflow-visible md:overflow-hidden mb-3"
     >
       {/* Box 1 */}
       <motion.div
