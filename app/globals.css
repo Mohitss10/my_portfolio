@@ -3,7 +3,7 @@
 
 
 :root {
-  --background: #060D1D;   /* 🔥 forced global background */
+  --background: #121212;   /* 🔥 forced global background */
   --foreground: #D3D3D3;   /* light text for contrast */
 }
 
@@ -17,7 +17,7 @@
 /* Optional: if you still want dark mode responsiveness */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #060D1D;  /* stays the same dark gray */
+    --background: #324395;  /* stays the same dark gray */
     --foreground: #D3D3D3;
   }
 }

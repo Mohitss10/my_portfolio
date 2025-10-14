@@ -45,7 +45,7 @@ const Page = () => {
         "
       >
         <p className="text-base sm:text-xl leading-relaxed text-gray-200 mb-4">
-          I am a final year Computer Science and Engineering student currently
+          Hello my name is Mohit, I am a final year Computer Science and Engineering student currently
           pursuing a B.Tech degree at G.H. Raisoni Institute of Engineering.
           Over the years, I have built a strong foundation in programming,
           with C++ being my core language. This has allowed me to sharpen my
@@ -67,7 +67,7 @@ const Page = () => {
         variants={boxVariant}
         className="
           bg-[#101626] p-2 rounded-lg
-          h-[80vh] sm:h-auto flex flex-col justify-between
+          h-[40vh] sm:h-auto flex flex-col justify-between
           sm:col-span-2 sm:row-span-5 sm:col-start-4 sm:row-start-1
         "
       >
@@ -77,7 +77,7 @@ const Page = () => {
           alt="Software Developer"
           width={1000} // ✅ must provide width
           height={420} // ✅ must provide height
-          className="w-full h-[35vh] object-cover rounded-lg"
+          className="w-full h-[15vh] sm:h-[35vh] object-cover rounded-lg"
         />
 
         {/* Resume Card */}
