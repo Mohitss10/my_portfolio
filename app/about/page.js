@@ -39,7 +39,7 @@ const Page = () => {
       <motion.div
         variants={boxVariant}
         className="
-          bg-[#101626] p-4 rounded-lg
+          bg-[#081c3999] p-4 rounded-lg
           h-auto sm:h-auto
           sm:col-span-3 sm:row-span-5 sm:col-start-1 sm:row-start-1
         "
@@ -66,7 +66,7 @@ const Page = () => {
       <motion.div
         variants={boxVariant}
         className="
-          bg-[#101626] p-2 rounded-lg
+          bg-[#081c3999] p-2 rounded-lg
           h-[40vh] sm:h-auto flex flex-col justify-between
           sm:col-span-2 sm:row-span-5 sm:col-start-4 sm:row-start-1
         "
@@ -77,7 +77,7 @@ const Page = () => {
           alt="Software Developer"
           width={1000} // ✅ must provide width
           height={420} // ✅ must provide height
-          className="w-full h-[15vh] sm:h-[35vh] object-cover rounded-lg"
+          className="w-full h-[20vh] sm:h-[45vh] object-cover rounded-lg"
         />
 
         {/* Resume Card */}
@@ -94,7 +94,7 @@ const Page = () => {
           <a
             href="/resume.pdf"
             download
-            className="mt-3 px-5 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition w-full text-center"
+            className="mt-3 px-5 py-3 bg-[#081c3999] hover:bg-gray-700 text-white rounded-lg transition w-full text-center"
           >
             Download Resume
           </a>

@@ -1,11 +1,19 @@
 "use client";
+
 import React from "react";
 import { motion } from "framer-motion";
-import { SiHtml5, SiCss3, SiJavascript, SiReact, SiNodedotjs, SiMongodb, SiCplusplus ,} from "react-icons/si";
+import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiReact,
+  SiNodedotjs,
+  SiMongodb,
+  SiCplusplus,
+} from "react-icons/si";
 import { GiBrain } from "react-icons/gi";
 
-
-// Parent container animation (for laptop/desktop)
+// Parent container animation
 const containerVariant = {
   hidden: { opacity: 1 },
   visible: {
@@ -14,7 +22,7 @@ const containerVariant = {
   },
 };
 
-// Child animation (box appear)
+// Child animation
 const boxVariant = {
   hidden: { opacity: 0, y: 40, scale: 0.95 },
   visible: {
@@ -28,8 +36,8 @@ const boxVariant = {
 // Icon floating animation
 const iconFloat = {
   animate: {
-    y: [0, -10, 0], // float up and down
-    scale: [1, 1.05, 1], // slight scale effect
+    y: [0, -10, 0],
+    scale: [1, 1.05, 1],
     transition: {
       duration: 2,
       repeat: Infinity,
@@ -40,78 +48,83 @@ const iconFloat = {
 
 // Tech stack data
 const techData = [
-  { name: "HTML5", icon: <SiHtml5 className="text-orange-500 w-20 h-20 sm:w-28 sm:h-28" />, desc: "Structure the web with HTML5." },
-  { name: "CSS3", icon: <SiCss3 className="text-blue-500 w-20 h-20 sm:w-28 sm:h-28" />, desc: "Style websites using modern CSS3." },
-  { name: "JavaScript", icon: <SiJavascript className="text-yellow-400 w-20 h-20 sm:w-28 sm:h-28" />, desc: "Add interactivity with JavaScript." },
-  { name: "React", icon: <SiReact className="text-cyan-400 w-20 h-20 sm:w-28 sm:h-28" />, desc: "Build UIs with React library." },
-  { name: "Node.js", icon: <SiNodedotjs className="text-green-500 w-20 h-20 sm:w-28 sm:h-28" />, desc: "Server-side JavaScript runtime." },
-  { name: "MongoDB", icon: <SiMongodb className="text-green-700 w-20 h-20 sm:w-28 sm:h-28" />, desc: "NoSQL database system." },
-  { name: "C++", icon: <SiCplusplus className="text-blue-700 w-20 h-20 sm:w-28 sm:h-28" />, desc: "High-performance programming language." },
-  { name: "DSA", icon: <GiBrain className="text-slate-500 w-20 h-20 sm:w-28 sm:h-28" />, desc: "Data Structures & Algorithms." },
+  { name: "HTML5", icon: SiHtml5, color: "text-orange-500", desc: "Structure the web with HTML5." },
+  { name: "CSS3", icon: SiCss3, color: "text-blue-500", desc: "Style websites using modern CSS3." },
+  { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400", desc: "Add interactivity with JavaScript." },
+  { name: "React", icon: SiReact, color: "text-cyan-400", desc: "Build UIs with React library." },
+  { name: "Node.js", icon: SiNodedotjs, color: "text-green-500", desc: "Server-side JavaScript runtime." },
+  { name: "MongoDB", icon: SiMongodb, color: "text-green-700", desc: "NoSQL database system." },
+  { name: "C++", icon: SiCplusplus, color: "text-blue-700", desc: "High-performance programming language." },
+  { name: "DSA", icon: GiBrain, color: "text-slate-500", desc: "Data Structures & Algorithms." },
 ];
 
 const Page = () => {
   return (
-    <div className=" mx-3 mt-1 sm:mt-0 rounded-2xl sm:h-[85.5vh]  sm:pt-2 overflow-hidden">
-      {/* Laptop/Desktop wrapper */}
+    <div className="mx-3 mt-1 mb-3 sm:mt-0 rounded-2xl sm:h-[85.5vh] sm:pt-2 overflow-hidden">
+      {/* Desktop/Laptop Grid */}
       <motion.div
-        className="hidden sm:grid gap-3 h-full w-full sm:grid-cols-4 sm:grid-rows-4 sm:auto-rows-auto text-white text-xl text-center"
+        className="hidden sm:grid gap-3 h-full w-full sm:grid-cols-4 sm:grid-rows-4 text-white text-xl text-center"
         variants={containerVariant}
         initial="hidden"
         animate="visible"
       >
-        {techData.map((tech, i) => (
-          <motion.div
-            key={i}
-            variants={boxVariant}
-            className={`bg-[#101626] rounded-2xl flex flex-col items-center justify-center p-4 text-center
-              ${i === 0 ? "sm:row-span-2" : ""}
-              ${i === 1 ? "sm:row-span-2 sm:col-start-1 sm:row-start-3" : ""}
-              ${i === 2 ? "sm:row-span-2 sm:col-start-2 sm:row-start-1" : ""}
-              ${i === 3 ? "sm:row-span-2 sm:col-start-2 sm:row-start-3" : ""}
-              ${i === 4 ? "sm:row-span-2 sm:col-start-3 sm:row-start-1" : ""}
-              ${i === 5 ? "sm:row-span-2 sm:col-start-3 sm:row-start-3" : ""}
-              ${i === 6 ? "sm:row-span-2 sm:col-start-4 sm:row-start-1" : ""}
-              ${i === 7 ? "sm:row-span-2 sm:col-start-4 sm:row-start-3" : ""}
-            `}
-          >
-            <motion.div {...iconFloat}>{tech.icon}</motion.div>
-            <span className="mt-2 text-lg sm:text-xl">{tech.name}</span>
-            <p className="mt-1 text-sm text-gray-300">{tech.desc}</p>
-          </motion.div>
-        ))}
+        {techData.map((tech, i) => {
+          const Icon = tech.icon;
+          return (
+            <motion.div
+              key={i}
+              variants={boxVariant}
+              className={`bg-[#081c3999] rounded-2xl flex flex-col items-center justify-center p-4 text-center
+                ${i === 0 ? "sm:row-span-2" : ""}
+                ${i === 1 ? "sm:row-span-2 sm:col-start-1 sm:row-start-3" : ""}
+                ${i === 2 ? "sm:row-span-2 sm:col-start-2 sm:row-start-1" : ""}
+                ${i === 3 ? "sm:row-span-2 sm:col-start-2 sm:row-start-3" : ""}
+                ${i === 4 ? "sm:row-span-2 sm:col-start-3 sm:row-start-1" : ""}
+                ${i === 5 ? "sm:row-span-2 sm:col-start-3 sm:row-start-3" : ""}
+                ${i === 6 ? "sm:row-span-2 sm:col-start-4 sm:row-start-1" : ""}
+                ${i === 7 ? "sm:row-span-2 sm:col-start-4 sm:row-start-3" : ""}
+              `}
+            >
+              <motion.div animate={iconFloat.animate}>
+                <Icon size={80} className={`${tech.color}`} />
+              </motion.div>
+              <span className="mt-2 text-lg sm:text-xl">{tech.name}</span>
+              <p className="mt-1 text-sm text-gray-300">{tech.desc}</p>
+            </motion.div>
+          );
+        })}
       </motion.div>
 
-      {/* Phone wrapper */}
-{/* Phone wrapper */}
-<div className="grid sm:hidden gap-3 w-full text-white text-xl font-semibold">
-  {techData.map((tech, i) => (
-    <motion.div
-      key={i}
-      variants={boxVariant}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ delay: 0.1 }}
-      className="bg-[#101626] rounded-2xl flex items-center h-[20vh] px-10 gap-4 py-2"
-    >
-      {/* Icon Section (Left) */}
-      <motion.div
-        {...iconFloat}
-        className="flex-shrink-0 w-[25%] flex justify-center"
-      >
-        <div className="scale-[1.15]">{tech.icon}</div>
-      </motion.div>
+      {/* Mobile Grid */}
+      <div className="grid sm:hidden gap-3 w-full text-white text-xl font-semibold">
+        {techData.map((tech, i) => {
+          const Icon = tech.icon;
+          return (
+            <motion.div
+              key={i}
+              variants={boxVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              className="bg-[#081c3999] rounded-2xl flex items-center h-[20vh] px-6 gap-4 py-2"
+            >
+              {/* Icon */}
+              <motion.div
+                animate={iconFloat.animate}
+                className="flex-shrink-0 w-[25%] flex justify-center"
+              >
+                <Icon size={80} className={`${tech.color}`} />
+              </motion.div>
 
-      {/* Text Section (Right) */}
-      <div className="ml-4 text-left w-[75%]">
-        <span className="block text-base sm:text-lg font-semibold">{tech.name}</span>
-        <p className="mt-1 text-sm text-gray-300 leading-snug">{tech.desc}</p>
+              {/* Text */}
+              <div className="ml-4 text-left w-[75%]">
+                <span className="block text-base sm:text-lg font-semibold">{tech.name}</span>
+                <p className="mt-1 text-sm text-gray-300 leading-snug">{tech.desc}</p>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
-    </motion.div>
-  ))}
-</div>
-
     </div>
   );
 };

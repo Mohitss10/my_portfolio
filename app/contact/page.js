@@ -1,7 +1,7 @@
 "use client";
+
 import React from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 const Page = () => {
   // Animation variants
@@ -23,59 +23,58 @@ const Page = () => {
       variants={containerVariant}
       initial="hidden"
       animate="visible"
-      className="bg-[#101626] min-h-[85.5vh] p-2 sm:p-6 mx-3 sm:mt-2 mt-0 rounded-2xl flex flex-col lg:flex-row items-center gap-6"
+      className="min-h-[85.5vh] px-2 sm:p-6 mx-1 mb-3 sm:mt-2 mt-1 rounded-2xl flex flex-col items-center relative overflow-visible"
     >
-      {/* Left side - Image */}
+      {/* Left side - Image (only show on mobile/smaller screens) */}
       <motion.div
         variants={fadeInUp}
-        className="w-full lg:w-1/2 h-56 sm:h-72 lg:h-full relative"
+        className="w-full h-56 sm:h-72 relative block lg:hidden"
       >
-        <Image
+        <img
           src="https://static.vecteezy.com/system/resources/previews/000/166/530/non_2x/contact-me-illustration-vector.jpg"
           alt="Contact"
-          fill
-          className="object-cover rounded-xl"
-          priority
+          className="object-cover rounded-xl shadow-2xl w-full h-full"
         />
       </motion.div>
 
-      {/* Right side - Contact Form */}
+      {/* Contact Form - Centered on laptop */}
       <motion.div
         variants={fadeInUp}
-        className="w-full lg:w-1/2 flex flex-col justify-center"
+        className="w-full lg:max-w-[600px] bg-[#0A192F99] p-4 sm:p-6 lg:p-8 rounded-2xl flex flex-col justify-center relative z-10 mt-3 lg:mt-12 mx-auto"
       >
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white mb-4 text-center lg:text-left">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white mb-4 text-center">
           Get in Touch
         </h2>
-        <form className="flex flex-col gap-2 w-full">
+        <form className="flex flex-col gap-3 w-full">
           <motion.input
             variants={fadeInUp}
             type="text"
             placeholder="Your Name"
-            className="w-full p-3 rounded-lg bg-black/40 border border-white/10 text-white placeholder-gray-400 focus:outline-none"
+            className="w-full p-3 bg-[#081c3999] rounded-lg border border-white/10 text-white placeholder-gray-400 focus:outline-none"
           />
           <motion.input
             variants={fadeInUp}
             type="email"
             placeholder="Your Email"
-            className="w-full p-3 rounded-lg bg-black/40 border border-white/10 text-white placeholder-gray-400 focus:outline-none"
+            className="w-full p-3 bg-[#081c3999] rounded-lg border border-white/10 text-white placeholder-gray-400 focus:outline-none"
           />
           <motion.textarea
             variants={fadeInUp}
             placeholder="Your Message"
             rows="5"
-            className="w-full p-3 rounded-lg bg-black/40 border border-white/10 text-white placeholder-gray-400 focus:outline-none resize-none"
+            className="w-full p-3 bg-[#081c3999] rounded-lg border border-white/10 text-white placeholder-gray-400 focus:outline-none resize-none"
           />
           <motion.button
             variants={fadeInUp}
             type="submit"
-            className="w-full px-5 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition"
+            className="w-full px-5 py-3 bg-[#081c3999] hover:bg-[#10326699] text-white rounded-lg transition mt-2"
           >
             Send Message
           </motion.button>
 
-          {/* ✅ Fixed escaped quotes */}
-          <h1 className="text-3xl mt-6">Let’s Build Something Amazing Together 🚀</h1>
+          <h1 className="text-xl mt-3 text-center">
+            Let’s Build Something Amazing Together
+          </h1>
         </form>
       </motion.div>
     </motion.div>

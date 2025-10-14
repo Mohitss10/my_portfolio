@@ -6,7 +6,7 @@ import { Menu, X, Sun, Moon, Aperture } from "lucide-react";
 
 const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState()
+  const [darkMode, setDarkMode] = useState();
 
   // // Apply theme to <html>
   // useEffect(() => {
@@ -22,8 +22,11 @@ const Navbar = () => {
   return (
     <div>
       {/* Top Navbar */}
-<nav className="fixed top-1.8  left-0 sm:w-[98.9vw] mx-2 mt-3 w-[96vw] z-50 bg-[#0A192F99] rounded-2xl my-0 sm:my-2 px-4 p-3 sm:px-6 sm:py-4 md:px-8 md:py-5">
-  <div className="flex flex-wrap items-center justify-between">
+      <nav className="fixed top-1.8 left-0 sm:w-[98.9vw] mx-2 mt-3 w-[96vw] z-50 
+  bg-gradient-to-r from-[#0a1f3f] via-[#0b162e] to-[#0a1f3f] 
+  rounded-2xl my-0 sm:my-2 px-4 p-3 sm:px-6 sm:py-4 md:px-8 md:py-5">
+
+        <div className="flex flex-wrap items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center space-x-3">
             <Aperture size={28} />
@@ -38,7 +41,7 @@ const Navbar = () => {
               <li>
                 <a
                   href="/"
-                  className="block py-2 px-3 md:p-0 hover:text-[#4A4A4A]"
+                  className="block py-2 px-3 md:p-0 hover:text-[#6b6b6b]"
                 >
                   Home
                 </a>
@@ -46,7 +49,7 @@ const Navbar = () => {
               <li>
                 <a
                   href="#"
-                  className="block py-2 px-3 md:p-0 hover:text-[#4A4A4A]"
+                  className="block py-2 px-3 md:p-0 hover:text-[#6b6b6b]"
                 >
                   LinkedIn
                 </a>
@@ -54,7 +57,7 @@ const Navbar = () => {
               <li>
                 <a
                   href="#"
-                  className="block py-2 px-3 md:p-0 hover:text-[#4A4A4A]"
+                  className="block py-2 px-3 md:p-0 hover:text-[#6b6b6b]"
                 >
                   Github
                 </a>
@@ -72,7 +75,7 @@ const Navbar = () => {
 
           {/* Hamburger button (mobile) */}
           <button
-            className="md:hidden text-white p-2 rounded-lg"
+            className="md:hidden text-white hover:text-[#6b6b6b] p-2 rounded-lg"
             onClick={() => setSidebarOpen(true)}
           >
             <Menu size={28} />
@@ -82,57 +85,56 @@ const Navbar = () => {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-full w-[100vw] bg-[#101626] p-5 transform transition-transform duration-300 z-50
+        className={`fixed top-0 left-0 h-full w-[100vw] bg-gradient-to-r from-[#081021] to-[#0a1f3f] p-5 transform transition-transform duration-300 z-50
         ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
         {/* Close button */}
         <button
-          className="absolute top-8 right-7"
+          className="absolute top-8 right-7 hover:text-[#6b6b6b]"
           onClick={() => setSidebarOpen(false)}
         >
           <X size={28} />
         </button>
 
-        <h2 className="text-xl  mb-10"></h2>
+        <h2 className=" mb-10"></h2>
         <ul className="space-y-4 text-xl">
-  {/* Home - internal link */}
-  <li>
-    <Link
-      href="/"
-      onClick={() => setSidebarOpen(false)}
-      className="hover:text-[#4A4A4A] cursor-pointer"
-    >
-      Home
-    </Link>
-  </li>
+          {/* Home - internal link */}
+          <li>
+            <Link
+              href="/"
+              onClick={() => setSidebarOpen(false)}
+              className="hover:text-[#6b6b6b] text-2xl cursor-pointer"
+            >
+              Home
+            </Link>
+          </li>
 
-  {/* LinkedIn - external link */}
-  <li>
-    <a
-      href="https://www.linkedin.com/in/your-profile"
-      target="_blank"
-      rel="noopener noreferrer"
-      onClick={() => setSidebarOpen(false)}
-      className="hover:text-[#4A4A4A] cursor-pointer"
-    >
-      LinkedIn
-    </a>
-  </li>
+          {/* LinkedIn - external link */}
+          <li>
+            <a
+              href="https://www.linkedin.com/in/your-profile"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setSidebarOpen(false)}
+              className="hover:text-[#6b6b6b] text-2xl cursor-pointer"
+            >
+              LinkedIn
+            </a>
+          </li>
 
-  {/* GitHub - external link */}
-  <li>
-    <a
-      href="https://github.com/your-username"
-      target="_blank"
-      rel="noopener noreferrer"
-      onClick={() => setSidebarOpen(false)}
-      className="hover:text-[#4A4A4A] cursor-pointer"
-    >
-      Github
-    </a>
-  </li>
-</ul>
-
+          {/* GitHub - external link */}
+          <li>
+            <a
+              href="https://github.com/your-username"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setSidebarOpen(false)}
+              className="hover:text-[#6b6b6b] text-2xl cursor-pointer"
+            >
+              Github
+            </a>
+          </li>
+        </ul>
 
         {/* Mobile Theme Toggle */}
         <div className="absolute bottom-6 -left-4">

@@ -25,7 +25,7 @@ const boxVariant = {
 
 const Page = () => {
   return (
-    <div className="mx-3 mt-2 sm:mt-0 sm:h-[85.5vh] sm:pt-3 overflow-hidden rounded-2xl">
+    <div className="mx-3 mt-1 sm:mt-0 sm:h-[85.5vh] sm:pt-3 overflow-hidden rounded-2xl mb-4">
       {/* Desktop Grid */}
       <motion.div
         className="hidden sm:grid gap-4 h-[87.3vh] sm:grid-cols-5 sm:grid-rows-6"
@@ -36,7 +36,7 @@ const Page = () => {
         {/* Box 1 */}
         <motion.div
           variants={boxVariant}
-          className="bg-[#101626] rounded-2xl col-span-2 row-span-6 flex flex-col p-2 overflow-hidden h-[84vh]"
+          className="bg-[#081c3999] rounded-2xl col-span-2 row-span-6 flex flex-col p-2 overflow-hidden h-[84vh]"
         >
           <div className="relative w-full h-[40vh] mb-4 rounded-2xl overflow-hidden">
             <Image
@@ -69,7 +69,7 @@ const Page = () => {
         {/* Box 2 */}
         <motion.div
           variants={boxVariant}
-          className="bg-[#101626] rounded-2xl col-span-2 row-span-6 flex flex-col p-2 overflow-hidden h-[84vh]"
+          className="bg-[#081c3999] rounded-2xl col-span-2 row-span-6 flex flex-col p-2 overflow-hidden h-[84vh]"
         >
           <div className="relative w-full h-[40vh] mb-4 rounded-2xl overflow-hidden">
             <Image
@@ -106,7 +106,7 @@ const Page = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           transition={{ delay: 0.1 }}
-          className="bg-[#101626] rounded-2xl p-2 flex flex-col text-white"
+          className="bg-[#081c3999] rounded-2xl p-2 flex flex-col text-white"
         >
           <div className="relative w-full h-[30vh] mb-3 rounded-xl overflow-hidden">
             <Image
@@ -136,7 +136,7 @@ const Page = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           transition={{ delay: 0.2 }}
-          className="bg-[#101626] rounded-2xl p-2 flex flex-col text-white"
+          className="bg-[#081c3999] rounded-2xl p-2 flex flex-col text-white"
         >
           <div className="relative w-full h-[30vh] mb-3 rounded-xl overflow-hidden">
             <Image

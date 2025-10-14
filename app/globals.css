@@ -3,7 +3,7 @@
 
 
 :root {
-  --background: #0D1117E6;   /* 🔥 forced global background */
+  --background: bg-gradient-to-r from-[#081021] to-[#0a1f3f];   /* 🔥 forced global background */
   --foreground: #D3D3D3;   /* light text for contrast */
 }
 

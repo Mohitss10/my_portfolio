@@ -72,12 +72,12 @@ export default function CustomGrid3() {
         viewport={{ once: true, amount: 0.2 }}
         className="relative bg-[#0A192F99] h-[60vh] sm:h-auto col-span-1 row-span-1 
           sm:col-span-2 md:col-span-2 lg:col-span-3 md:row-span-2 lg:row-span-4 
-          p-4 rounded-2xl flex flex-col cursor-pointer mt-1 sm:mt-0
+          p-2 rounded-2xl flex flex-col cursor-pointer mt-1 sm:mt-0
           "
       >
         <Link href="/about" className="flex flex-col justify-between h-full">
           <div>
-            <ArrowUpRight className="absolute text-gray-400 top-4 right-4 w-6 h-6 sm:w-8 sm:h-8" />
+            <ArrowUpRight className="absolute hover:text-[#6b6b6b] top-4 right-4 w-6 h-6 sm:w-8 sm:h-8" />
             <span className="text-3xl  sm:text-xl md:text-2xl lg:text-3xl text-white">
               Hello, I&apos;m Mohit
             </span>
@@ -108,11 +108,11 @@ export default function CustomGrid3() {
           "
       >
         <Link href="/project" className="absolute inset-0 flex flex-col justify-between p-2">
-          <ArrowUpRight className="absolute text-gray-400 top-2 right-2 w-6 h-6 sm:w-8 sm:h-8" />
+          <ArrowUpRight className="absolute hover:text-[#6b6b6b] top-2 right-2 w-6 h-6 sm:w-8 sm:h-8" />
           <span className="text-3xl  sm:text-2xl text-white">Projects</span>
           <div className="gap-2 flex flex-col w-full">
             {/* AIMatrix */}
-            <div className="p-2 bg-gray-800 rounded-2xl">
+            <div className="p-2 bg-[#081c3999] rounded-2xl">
               <h3 className="text-3xl font-semibold">AIMatrix</h3>
               <div className="flex items-center justify-between">
                 <p className="text-lg sm:">AI SaaS web app</p>
@@ -123,8 +123,8 @@ export default function CustomGrid3() {
                   }}
                   className="relative group"
                 >
-                  <LinkIcon className="w-4 h-6 sm:w-4 sm:h-4 hover:text-slate-400 transition-colors" />
-                  <span className="absolute -left-6 bottom-0 px-2 py-1 text-xs rounded bg-black text-white opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                  <LinkIcon className="w-4 h-6 sm:w-4 sm:h-4 hover:text-[#6b6b6b] transition-colors" />
+                  <span className="absolute -left-10 bottom-0 px-2 py-1 text-xs rounded bg-black text-white opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                     Visit
                   </span>
                 </button>
@@ -132,7 +132,7 @@ export default function CustomGrid3() {
             </div>
 
             {/* Netflix Clone */}
-            <div className="p-2 bg-gray-800 rounded-2xl">
+            <div className="p-2 bg-[#081c3999] rounded-2xl">
               <h3 className="text-3xl font-semibold">Netflix Clone</h3>
               <div className="flex items-center justify-between">
                 <p className="text-lg">Movie streaming platform</p>
@@ -143,8 +143,8 @@ export default function CustomGrid3() {
                   }}
                   className="relative group"
                 >
-                  <LinkIcon className="w-4 h-6 sm:w-4 sm:h-4 hover:text-slate-400 transition-colors" />
-                  <span className="absolute -left-6 bottom-0 px-2 py-1 text-xs rounded bg-black text-white opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                  <LinkIcon className="w-4 h-6 sm:w-4 sm:h-4 hover:text-[#6b6b6b] transition-colors" />
+                  <span className="absolute -left-10 bottom-0 px-2 py-1 text-xs rounded bg-black text-white opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                     Visit
                   </span>
                 </button>
@@ -162,25 +162,25 @@ export default function CustomGrid3() {
         className="relative bg-[#0A192F99] h-[60vh] sm:h-auto col-span-1 row-span-1 
           md:col-span-2 lg:col-span-3 md:row-span-2 lg:row-span-3 xl:col-start-3 
           xl:row-start-5 flex flex-col justify-between p-2 text-lg sm:text-xl rounded-2xl cursor-pointer
-          transition-shadow duration-300 hover:shadow-xl hover:shadow-gray-900/50"
+         "
       >
         <Link href="/certification" className="flex flex-col justify-between h-full">
           <div>
-            <ArrowUpRight className="absolute top-2 text-gray-400 right-2 w-6 h-6 sm:w-8 sm:h-8" />
+            <ArrowUpRight className="absolute top-2 hover:text-[#6b6b6b] right-2 w-6 h-6 sm:w-8 sm:h-8" />
             <span className="text-3xl sm:text-2xl text-white mb-4">Certificates</span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-5 sm:grid-rows-2 gap-2 w-full">
-            <div className="bg-gray-800 sm:col-span-3 flex items-center justify-center rounded-xl py-4">
+            <div className="bg-[#081c3999] sm:col-span-3 flex items-center justify-center rounded-xl py-4">
               Prompt Engineering
             </div>
-            <div className="bg-gray-800 sm:col-span-2 flex items-center justify-center rounded-xl py-4">
+            <div className="bg-[#081c3999] sm:col-span-2 flex items-center justify-center rounded-xl py-4">
               JavaScript
             </div>
-            <div className="bg-gray-800 sm:col-span-2 sm:row-start-2 flex items-center justify-center rounded-xl py-4">
+            <div className="bg-[#081c3999] sm:col-span-2 sm:row-start-2 flex items-center justify-center rounded-xl py-4">
               TCS Icon
             </div>
-            <div className="bg-gray-800 sm:col-span-3 sm:col-start-3 sm:row-start-2 flex items-center justify-center rounded-xl py-4">
+            <div className="bg-[#081c3999] sm:col-span-3 sm:col-start-3 sm:row-start-2 flex items-center justify-center rounded-xl py-4">
               HTML, CSS & JS
             </div>
           </div>
@@ -201,7 +201,7 @@ export default function CustomGrid3() {
           "
       >
         <Link href="/skills" className="absolute inset-0 flex flex-col justify-between p-2">
-          <ArrowUpRight className="absolute top-2 text-gray-400 right-2 w-6 h-6 sm:w-8 sm:h-8" />
+          <ArrowUpRight className="absolute top-2 hover:text-[#6b6b6b] right-2 w-6 h-6 sm:w-8 sm:h-8" />
           <span className="text-3xl sm:text-2xl text-white">Skills</span>
           <div className="relative mt-6 mb-7 w-full overflow-hidden">
             <div className="absolute left-0 top-0 h-full w-12 sm:w-16 bg-gradient-to-r from-[#101626] to-transparent z-10" />
@@ -217,7 +217,7 @@ export default function CustomGrid3() {
         </Link>
       </motion.div>
 
-      {/* 🌐 Socials Section */}
+      
 {/* 🌐 Socials Section */}
 <motion.div
   variants={fadeFromRight}
@@ -281,7 +281,7 @@ export default function CustomGrid3() {
           transition-shadow duration-300 hover:shadow-xl hover:shadow-gray-900/50"
       >
         <Link href="/contact" className="absolute inset-0 flex flex-col p-2 justify-between">
-          <ArrowUpRight className="absolute text-gray-400 top-2 right-2 w-6 h-6 sm:w-8 sm:h-8" />
+          <ArrowUpRight className="absolute hover:text-[#6b6b6b] top-2 right-2 w-6 h-6 sm:w-8 sm:h-8" />
           <span className="text-3xl sm:text-2xl text-white">Contact</span>
           <div>
             <span className="text-5xl">Let&apos;s collaborate</span>
