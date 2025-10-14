@@ -40,14 +40,14 @@ const iconFloat = {
 
 // Tech stack data
 const techData = [
-  { name: "HTML5", icon: <SiHtml5 className="text-orange-500 w-30 h-30 sm:w-28 sm:h-28" />, desc: "Structure the web with HTML5." },
-  { name: "CSS3", icon: <SiCss3 className="text-blue-500 w-30 h-30 sm:w-28 sm:h-28" />, desc: "Style websites using modern CSS3." },
-  { name: "JavaScript", icon: <SiJavascript className="text-yellow-400 w-30 h-30 sm:w-28 sm:h-28" />, desc: "Add interactivity with JavaScript." },
-  { name: "React", icon: <SiReact className="text-cyan-400 w-30 h-30 sm:w-28 sm:h-28" />, desc: "Build UIs with React library." },
-  { name: "Node.js", icon: <SiNodedotjs className="text-green-500 w-30 h-30 sm:w-28 sm:h-28" />, desc: "Server-side JavaScript runtime." },
-  { name: "MongoDB", icon: <SiMongodb className="text-green-700 w-30 h-30 sm:w-28 sm:h-28" />, desc: "NoSQL database system." },
-  { name: "C++", icon: <SiCplusplus className="text-blue-700 w-30 h-30 sm:w-28 sm:h-28" />, desc: "High-performance programming language." },
-  { name: "DSA", icon: <GiBrain className="text-slate-500 w-30 h-30 sm:w-28 sm:h-28" />, desc: "Data Structures & Algorithms." },
+  { name: "HTML5", icon: <SiHtml5 className="text-orange-500 w-20 h-20 sm:w-28 sm:h-28" />, desc: "Structure the web with HTML5." },
+  { name: "CSS3", icon: <SiCss3 className="text-blue-500 w-20 h-20 sm:w-28 sm:h-28" />, desc: "Style websites using modern CSS3." },
+  { name: "JavaScript", icon: <SiJavascript className="text-yellow-400 w-20 h-20 sm:w-28 sm:h-28" />, desc: "Add interactivity with JavaScript." },
+  { name: "React", icon: <SiReact className="text-cyan-400 w-20 h-20 sm:w-28 sm:h-28" />, desc: "Build UIs with React library." },
+  { name: "Node.js", icon: <SiNodedotjs className="text-green-500 w-20 h-20 sm:w-28 sm:h-28" />, desc: "Server-side JavaScript runtime." },
+  { name: "MongoDB", icon: <SiMongodb className="text-green-700 w-20 h-20 sm:w-28 sm:h-28" />, desc: "NoSQL database system." },
+  { name: "C++", icon: <SiCplusplus className="text-blue-700 w-20 h-20 sm:w-28 sm:h-28" />, desc: "High-performance programming language." },
+  { name: "DSA", icon: <GiBrain className="text-slate-500 w-20 h-20 sm:w-28 sm:h-28" />, desc: "Data Structures & Algorithms." },
 ];
 
 const Page = () => {
@@ -83,23 +83,35 @@ const Page = () => {
       </motion.div>
 
       {/* Phone wrapper */}
-      <div className="grid sm:hidden gap-3 h-full w-full grid-cols-1 auto-rows-[50vh] text-white text-xl font-semibold text-center">
-        {techData.map((tech, i) => (
-          <motion.div
-            key={i}
-            variants={boxVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ delay: 0.1 }}
-            className="bg-[#101626] rounded-2xl flex flex-col items-center justify-center p-4 text-center"
-          >
-            <motion.div {...iconFloat}>{tech.icon}</motion.div>
-            <span className="mt-2 text-xl">{tech.name}</span>
-            <p className="mt-1 text-lg text-gray-300">{tech.desc}</p>
-          </motion.div>
-        ))}
+{/* Phone wrapper */}
+<div className="grid sm:hidden gap-3 w-full text-white text-xl font-semibold">
+  {techData.map((tech, i) => (
+    <motion.div
+      key={i}
+      variants={boxVariant}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ delay: 0.1 }}
+      className="bg-[#101626] rounded-2xl flex items-center h-[20vh] px-10 gap-4 py-2"
+    >
+      {/* Icon Section (Left) */}
+      <motion.div
+        {...iconFloat}
+        className="flex-shrink-0 w-[25%] flex justify-center"
+      >
+        <div className="scale-[1.15]">{tech.icon}</div>
+      </motion.div>
+
+      {/* Text Section (Right) */}
+      <div className="ml-4 text-left w-[75%]">
+        <span className="block text-base sm:text-lg font-semibold">{tech.name}</span>
+        <p className="mt-1 text-sm text-gray-300 leading-snug">{tech.desc}</p>
       </div>
+    </motion.div>
+  ))}
+</div>
+
     </div>
   );
 };
