@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <div>
       {/* Top Navbar */}
-<nav className="fixed top-1.8  left-0 sm:w-[98.9vw] mx-2 mt-3 w-[96vw] z-50 bg-[#5588aa66] rounded-2xl my-0 sm:my-2 px-4 p-3 sm:px-6 sm:py-4 md:px-8 md:py-5">
+<nav className="fixed top-1.8  left-0 sm:w-[98.9vw] mx-2 mt-3 w-[96vw] z-50 bg-[#0A192F99] rounded-2xl my-0 sm:my-2 px-4 p-3 sm:px-6 sm:py-4 md:px-8 md:py-5">
   <div className="flex flex-wrap items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center space-x-3">
