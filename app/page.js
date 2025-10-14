@@ -18,7 +18,7 @@ import {
 } from "react-icons/si";
 
 export default function CustomGrid3() {
-  // ✅ Store metadata instead of JSX
+  // ✅ Icon list
   const logos = [
     { id: "html", Icon: SiHtml5 },
     { id: "css", Icon: SiCss3 },
@@ -31,30 +31,18 @@ export default function CustomGrid3() {
     { id: "github", Icon: SiGithub },
   ];
 
-  // Animation Variants
+  // ✅ Animations
   const fadeFromLeft = {
     hidden: { opacity: 0, x: -80 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.9, ease: "easeOut" },
-    },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.9, ease: "easeOut" } },
   };
   const fadeFromRight = {
     hidden: { opacity: 0, x: 80 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.9, ease: "easeOut" },
-    },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.9, ease: "easeOut" } },
   };
   const fadeFromBottom = {
     hidden: { opacity: 0, y: 80 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.9, ease: "easeOut" },
-    },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: "easeOut" } },
   };
   const fadeInUp = {
     hidden: { opacity: 0, y: 36, scale: 0.98 },
@@ -68,17 +56,15 @@ export default function CustomGrid3() {
 
   return (
     <div
-      className="
-    grid gap-3 rounded-2xl mx-1 my-0 sm:my-2 overflow-hidden
-    grid-cols-1 w-auto px-2
-    h-auto
-    sm:h-[85.5vh] sm:grid-cols-2 sm:grid-rows-4
-    md:grid-cols-4 md:grid-rows-4
-    lg:grid-cols-6 lg:grid-rows-6
-    xl:grid-cols-7 xl:grid-rows-7
-  "
+      className="grid gap-3 rounded-2xl mx-1 my-0 sm:my-2 overflow-hidden
+        grid-cols-1 w-auto px-2
+        h-auto sm:h-[85.5vh] sm:grid-cols-2 sm:grid-rows-4
+        md:grid-cols-4 md:grid-rows-4
+        lg:grid-cols-6 lg:grid-rows-6
+        xl:grid-cols-7 xl:grid-rows-7"
     >
-      {/* About (from left) */}
+
+      {/* 👋 About Section */}
       <motion.div
         variants={fadeFromLeft}
         initial="hidden"
@@ -89,16 +75,13 @@ export default function CustomGrid3() {
           p-2 rounded-2xl flex flex-col cursor-pointer mt-1 sm:mt-0
           transition-shadow duration-300 hover:shadow-xl hover:shadow-gray-900/50"
       >
-        <Link
-          href="/about"
-          className="absolute inset-0 flex flex-col p-2 rounded-2xl"
-        >
+        <Link href="/about" className="absolute inset-0 flex flex-col p-2 rounded-2xl">
           <ArrowUpRight className="absolute text-gray-400 top-4 right-4 w-6 h-6 sm:w-8 sm:h-8" />
           <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white">
             Hello I'm Mohit
           </span>
           <div className="flex flex-col justify-end">
-            <span className="text-6xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mt-34 sm:mt-47 mb-5 text-white text-story-script">
+            <span className="text-6xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-5 text-white text-story-script">
               Full Stack Developer
             </span>
             <span className="text-3xl sm:text-lg md:text-xl lg:text-2xl mb-2 text-white">
@@ -108,7 +91,7 @@ export default function CustomGrid3() {
         </Link>
       </motion.div>
 
-      {/* Projects (from right) */}
+      {/* 💻 Projects Section */}
       <motion.div
         variants={fadeFromRight}
         initial="hidden"
@@ -120,55 +103,55 @@ export default function CustomGrid3() {
           text-lg sm:text-xl rounded-2xl h-[60vh] cursor-pointer
           transition-shadow duration-300 hover:shadow-xl hover:shadow-gray-900/50"
       >
-        <Link
-          href="/project"
-          className="absolute inset-0 flex flex-col justify-between p-2"
-        >
+        <Link href="/project" className="absolute inset-0 flex flex-col justify-between p-2">
           <ArrowUpRight className="absolute text-gray-400 top-2 right-2 w-6 h-6 sm:w-8 sm:h-8" />
           <span className="text-xl sm:text-2xl text-white">Projects</span>
+
           <div className="gap-2 flex flex-col w-full">
             {/* AIMatrix */}
             <div className="p-2 bg-gray-800 rounded-2xl">
               <h3 className="text-4xl font-bold">AIMatrix</h3>
               <div className="flex items-center justify-between">
                 <p className="text-xl">AI SaaS web app</p>
-                <a
-                  href="https://your-aimatrix-link.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.open("https://your-aimatrix-link.com", "_blank", "noopener,noreferrer");
+                  }}
                   className="relative group"
                 >
-                  <LinkIcon className="w-4 h-6 sm:w-4 sm:h-4 hover:text-slate-600 transition-colors" />
-                  <span className="absolute -left-6 bottom-0 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-600">
-                    Link
+                  <LinkIcon className="w-4 h-6 sm:w-4 sm:h-4 hover:text-slate-400 transition-colors" />
+                  <span className="absolute -left-6 bottom-0 px-2 py-1 text-xs rounded bg-black text-white opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    Visit
                   </span>
-                </a>
+                </button>
               </div>
             </div>
 
             {/* Netflix Clone */}
             <div className="p-2 bg-gray-800 rounded-2xl">
-              <h3 className="text-4xl font-bold">Netflix - Clone</h3>
+              <h3 className="text-4xl font-bold">Netflix Clone</h3>
               <div className="flex items-center justify-between">
                 <p className="text-xl">Movie streaming platform</p>
-                <a
-                  href="https://your-netflix-clone-link.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.open("https://your-netflix-clone-link.com", "_blank", "noopener,noreferrer");
+                  }}
                   className="relative group"
                 >
-                  <LinkIcon className="w-4 h-6 sm:w-4 sm:h-4 hover:text-slate-600 transition-colors" />
-                  <span className="absolute -left-6 bottom-0 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-600">
-                    Link
+                  <LinkIcon className="w-4 h-6 sm:w-4 sm:h-4 hover:text-slate-400 transition-colors" />
+                  <span className="absolute -left-6 bottom-0 px-2 py-1 text-xs rounded bg-black text-white opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    Visit
                   </span>
-                </a>
+                </button>
               </div>
             </div>
           </div>
         </Link>
       </motion.div>
 
-      {/* Certificates (from bottom) */}
+      {/* 📜 Certificates Section */}
       <motion.div
         variants={fadeFromBottom}
         initial="hidden"
@@ -181,25 +164,17 @@ export default function CustomGrid3() {
       >
         <Link href="/certification" className="absolute inset-0 flex flex-col p-2">
           <ArrowUpRight className="absolute top-2 text-gray-400 right-2 w-6 h-6 sm:w-8 sm:h-8" />
-          <span className="text-xl sm:text-2xl">Certificates</span>
-          <div className="parent grid grid-cols-1 sm:grid-cols-5 sm:grid-rows-2 gap-2 mt-30 w-full h-full">
-            <div className="bg-gray-800 sm:col-span-3 flex items-center justify-center rounded-xl">
-              Prompt Engineering
-            </div>
-            <div className="bg-gray-800 sm:col-span-2 flex items-center justify-center rounded-xl">
-              JavaScript
-            </div>
-            <div className="bg-gray-800 sm:col-span-2 sm:row-start-2 flex items-center justify-center rounded-xl">
-              TCS-icon
-            </div>
-            <div className="bg-gray-800 sm:col-span-3 sm:col-start-3 sm:row-start-2 flex items-center justify-center rounded-xl">
-              HTML , CSS & Javascript
-            </div>
+          <span className="text-xl sm:text-2xl text-white">Certificates</span>
+          <div className="grid grid-cols-1 sm:grid-cols-5 sm:grid-rows-2 gap-2 mt-6 w-full h-full">
+            <div className="bg-gray-800 sm:col-span-3 flex items-center justify-center rounded-xl">Prompt Engineering</div>
+            <div className="bg-gray-800 sm:col-span-2 flex items-center justify-center rounded-xl">JavaScript</div>
+            <div className="bg-gray-800 sm:col-span-2 sm:row-start-2 flex items-center justify-center rounded-xl">TCS Icon</div>
+            <div className="bg-gray-800 sm:col-span-3 sm:col-start-3 sm:row-start-2 flex items-center justify-center rounded-xl">HTML, CSS & JS</div>
           </div>
         </Link>
       </motion.div>
 
-      {/* Skills (fadeInUp) */}
+      {/* 🧠 Skills Section */}
       <motion.div
         custom={3}
         variants={fadeInUp}
@@ -212,10 +187,7 @@ export default function CustomGrid3() {
           rounded-2xl cursor-pointer overflow-hidden
           transition-shadow duration-300 hover:shadow-xl hover:shadow-gray-900/50"
       >
-        <Link
-          href="/skills"
-          className="absolute inset-0 flex flex-col justify-between p-2"
-        >
+        <Link href="/skills" className="absolute inset-0 flex flex-col justify-between p-2">
           <ArrowUpRight className="absolute top-2 text-gray-400 right-2 w-6 h-6 sm:w-8 sm:h-8" />
           <span className="text-xl sm:text-2xl text-white">Skills</span>
           <div className="relative mt-6 mb-7 w-full overflow-hidden">
@@ -223,10 +195,7 @@ export default function CustomGrid3() {
             <div className="absolute right-0 top-0 h-full w-12 sm:w-16 bg-gradient-to-l from-[#101626] to-transparent z-10" />
             <div className="flex animate-scroll space-x-6 sm:space-x-8 w-max">
               {logos.concat(logos).map((item, index) => (
-                <div
-                  key={`${item.id}-${index}`}
-                  className="flex items-center justify-center"
-                >
+                <div key={`${item.id}-${index}`} className="flex items-center justify-center">
                   <item.Icon className="text-gray-300 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" />
                 </div>
               ))}
@@ -235,7 +204,7 @@ export default function CustomGrid3() {
         </Link>
       </motion.div>
 
-      {/* Socials (from right) */}
+      {/* 🌐 Socials Section */}
       <motion.div
         variants={fadeFromRight}
         initial="hidden"
@@ -247,28 +216,28 @@ export default function CustomGrid3() {
           transition-shadow duration-300 hover:shadow-xl hover:shadow-gray-900/50"
       >
         <div className="flex space-x-6 sm:space-x-8">
-          <div className="relative group">
-            <FaInstagram className="w-6 h-6 sm:w-8 sm:h-8 hover:text-pink-500 transition-colors cursor-pointer" />
-            <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 group-hover:opacity-100 transition-all duration-600">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="relative group">
+            <FaInstagram className="w-6 h-6 sm:w-8 sm:h-8 hover:text-pink-500 transition-colors" />
+            <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
               Instagram
             </span>
-          </div>
-          <div className="relative group">
-            <FaGithub className="w-6 h-6 sm:w-8 sm:h-8 hover:text-gray-400 transition-colors cursor-pointer" />
-            <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 group-hover:opacity-100 transition-all duration-600">
+          </a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="relative group">
+            <FaGithub className="w-6 h-6 sm:w-8 sm:h-8 hover:text-gray-400 transition-colors" />
+            <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
               GitHub
             </span>
-          </div>
-          <div className="relative group">
-            <FaLinkedin className="w-6 h-6 sm:w-8 sm:h-8 hover:text-blue-500 transition-colors cursor-pointer" />
-            <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 group-hover:opacity-100 transition-all duration-600">
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="relative group">
+            <FaLinkedin className="w-6 h-6 sm:w-8 sm:h-8 hover:text-blue-500 transition-colors" />
+            <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
               LinkedIn
             </span>
-          </div>
+          </a>
         </div>
       </motion.div>
 
-      {/* Contact (from bottom) */}
+      {/* 📩 Contact Section */}
       <motion.div
         variants={fadeFromBottom}
         initial="hidden"
@@ -279,10 +248,7 @@ export default function CustomGrid3() {
           xl:row-start-5 flex flex-col p-2 text-lg justify-between sm:text-xl rounded-2xl cursor-pointer
           transition-shadow duration-300 hover:shadow-xl hover:shadow-gray-900/50"
       >
-        <Link
-          href="/contact"
-          className="absolute inset-0 flex flex-col p-2 justify-between"
-        >
+        <Link href="/contact" className="absolute inset-0 flex flex-col p-2 justify-between">
           <ArrowUpRight className="absolute text-gray-400 top-2 right-2 w-6 h-6 sm:w-8 sm:h-8" />
           <span className="text-xl sm:text-2xl text-white">Contact</span>
           <div>

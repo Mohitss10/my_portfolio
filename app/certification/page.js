@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -6,9 +7,7 @@ const container = {
   hidden: { opacity: 1 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.3, // delay between each box
-    },
+    transition: { staggerChildren: 0.3 },
   },
 };
 
@@ -18,28 +17,27 @@ const item = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
-const Page = () => {
+export default function Page() {
   return (
     <motion.div
       variants={container}
       initial="hidden"
       animate="visible"
       className="mx-3 sm:mt-2 my-0 rounded-2xl grid gap-2
-    h-auto md:h-[85.5vh]   
-    grid-cols-1 
-    sm:grid-cols-2 
-    md:grid-cols-6 md:grid-rows-6
-    overflow-visible md:overflow-hidden"
+        h-auto md:h-[85.5vh]
+        grid-cols-1 
+        sm:grid-cols-2 
+        md:grid-cols-6 md:grid-rows-6
+        overflow-visible md:overflow-hidden"
     >
       {/* Box 1 */}
       <motion.div
         variants={item}
         className="bg-[#101626] rounded-2xl overflow-hidden 
           h-[40vh] md:h-auto
-          col-span-1 
-          md:col-span-2 md:row-span-3"
+          col-span-1 md:col-span-2 md:row-span-3"
       >
-        <img src="2.jpg" alt="Box 1" className="w-full h-full object-cover" />
+        <img src="/2.jpg" alt="Box 1" className="w-full h-full object-cover" />
       </motion.div>
 
       {/* Box 2 */}
@@ -47,10 +45,9 @@ const Page = () => {
         variants={item}
         className="bg-[#101626] rounded-2xl overflow-hidden 
           h-[40vh] md:h-auto
-          col-span-1 
-          md:col-span-2 md:row-span-3 md:col-start-3"
+          col-span-1 md:col-span-2 md:row-span-3 md:col-start-3"
       >
-        <img src="1.jpg" alt="Box 2" className="w-full h-full object-cover" />
+        <img src="/1.jpg" alt="Box 2" className="w-full h-full object-cover" />
       </motion.div>
 
       {/* Box 3 */}
@@ -58,10 +55,9 @@ const Page = () => {
         variants={item}
         className="bg-[#101626] rounded-2xl overflow-hidden 
           h-[40vh] md:h-auto
-          col-span-1 
-          md:col-span-2 md:row-span-3 md:col-start-5"
+          col-span-1 md:col-span-2 md:row-span-3 md:col-start-5"
       >
-        <img src="3.jpg" alt="Box 3" className="w-full h-full object-cover" />
+        <img src="/3.jpg" alt="Box 3" className="w-full h-full object-cover" />
       </motion.div>
 
       {/* Box 4 */}
@@ -69,10 +65,9 @@ const Page = () => {
         variants={item}
         className="bg-[#101626] rounded-2xl overflow-hidden 
           h-[40vh] md:h-auto
-          col-span-1 
-          md:col-span-2 md:row-span-3 md:row-start-4"
+          col-span-1 md:col-span-2 md:row-span-3 md:row-start-4"
       >
-        <img src="2.jpg" alt="Box 4" className="w-full h-full object-cover" />
+        <img src="/2.jpg" alt="Box 4" className="w-full h-full object-cover" />
       </motion.div>
 
       {/* Box 5 */}
@@ -80,13 +75,10 @@ const Page = () => {
         variants={item}
         className="bg-[#101626] rounded-2xl overflow-hidden 
           h-[40vh] md:h-auto
-          col-span-1 
-          md:col-span-2 md:row-span-3 md:col-start-3 md:row-start-4"
+          col-span-1 md:col-span-2 md:row-span-3 md:col-start-3 md:row-start-4"
       >
-        <img src="1.jpg" alt="Box 5" className="w-full h-full object-cover" />
+        <img src="/1.jpg" alt="Box 5" className="w-full h-full object-cover" />
       </motion.div>
     </motion.div>
   );
-};
-
-export default Page;
+}

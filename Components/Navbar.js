@@ -6,9 +6,7 @@ import { Menu, X, Sun, Moon, Aperture } from "lucide-react";
 
 const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(
-    () => localStorage.getItem("theme") === "dark"
-  );
+  const [darkMode, setDarkMode] = useState()
 
   // Apply theme to <html>
   useEffect(() => {
