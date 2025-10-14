@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUpRight, LinkIcon } from "lucide-react";
 import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
@@ -14,7 +15,7 @@ import {
   SiTailwindcss,
   SiNodedotjs,
   SiMongodb,
-  SiGithub,
+  SiGithub as SiGithubIcon,
 } from "react-icons/si";
 
 export default function CustomGrid3() {
@@ -28,7 +29,7 @@ export default function CustomGrid3() {
     { id: "tailwind", Icon: SiTailwindcss },
     { id: "node", Icon: SiNodedotjs },
     { id: "mongo", Icon: SiMongodb },
-    { id: "github", Icon: SiGithub },
+    { id: "github", Icon: SiGithubIcon },
   ];
 
   // ✅ Animations
@@ -63,7 +64,6 @@ export default function CustomGrid3() {
         lg:grid-cols-6 lg:grid-rows-6
         xl:grid-cols-7 xl:grid-rows-7"
     >
-
       {/* 👋 About Section */}
       <motion.div
         variants={fadeFromLeft}
@@ -75,10 +75,10 @@ export default function CustomGrid3() {
           p-2 rounded-2xl flex flex-col cursor-pointer mt-1 sm:mt-0
           transition-shadow duration-300 hover:shadow-xl hover:shadow-gray-900/50"
       >
-        <Link href="/about" className="absolute inset-0 flex flex-col p-2 rounded-2xl">
+        <Link href="/about" className="absolute inset-0 flex flex-col p-2">
           <ArrowUpRight className="absolute text-gray-400 top-4 right-4 w-6 h-6 sm:w-8 sm:h-8" />
           <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white">
-            Hello I'm Mohit
+            Hello, I&apos;m Mohit
           </span>
           <div className="flex flex-col justify-end">
             <span className="text-6xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-5 text-white text-story-script">
@@ -106,7 +106,6 @@ export default function CustomGrid3() {
         <Link href="/project" className="absolute inset-0 flex flex-col justify-between p-2">
           <ArrowUpRight className="absolute text-gray-400 top-2 right-2 w-6 h-6 sm:w-8 sm:h-8" />
           <span className="text-xl sm:text-2xl text-white">Projects</span>
-
           <div className="gap-2 flex flex-col w-full">
             {/* AIMatrix */}
             <div className="p-2 bg-gray-800 rounded-2xl">
@@ -157,19 +156,28 @@ export default function CustomGrid3() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="relative bg-[#101626] h-[60vh] sm:h-auto col-span-1 row-span-1 
+        className="relative bg-[#101626] col-span-1 row-span-1 
           md:col-span-2 lg:col-span-3 md:row-span-2 lg:row-span-3 xl:col-start-3 
           xl:row-start-5 flex flex-col p-2 text-lg sm:text-xl rounded-2xl cursor-pointer
           transition-shadow duration-300 hover:shadow-xl hover:shadow-gray-900/50"
       >
         <Link href="/certification" className="absolute inset-0 flex flex-col p-2">
           <ArrowUpRight className="absolute top-2 text-gray-400 right-2 w-6 h-6 sm:w-8 sm:h-8" />
-          <span className="text-xl sm:text-2xl text-white">Certificates</span>
-          <div className="grid grid-cols-1 sm:grid-cols-5 sm:grid-rows-2 gap-2 mt-6 w-full h-full">
-            <div className="bg-gray-800 sm:col-span-3 flex items-center justify-center rounded-xl">Prompt Engineering</div>
-            <div className="bg-gray-800 sm:col-span-2 flex items-center justify-center rounded-xl">JavaScript</div>
-            <div className="bg-gray-800 sm:col-span-2 sm:row-start-2 flex items-center justify-center rounded-xl">TCS Icon</div>
-            <div className="bg-gray-800 sm:col-span-3 sm:col-start-3 sm:row-start-2 flex items-center justify-center rounded-xl">HTML, CSS & JS</div>
+          <span className="text-xl sm:text-2xl text-white mb-2">Certificates</span>
+
+          <div className="grid grid-cols-1 sm:grid-cols-5 sm:grid-rows-2 gap-2 w-full">
+            <div className="bg-gray-800 sm:col-span-3 flex items-center justify-center rounded-xl py-4">
+              Prompt Engineering
+            </div>
+            <div className="bg-gray-800 sm:col-span-2 flex items-center justify-center rounded-xl py-4">
+              JavaScript
+            </div>
+            <div className="bg-gray-800 sm:col-span-2 sm:row-start-2 flex items-center justify-center rounded-xl py-4">
+              TCS Icon
+            </div>
+            <div className="bg-gray-800 sm:col-span-3 sm:col-start-3 sm:row-start-2 flex items-center justify-center rounded-xl py-4">
+              HTML, CSS & JS
+            </div>
           </div>
         </Link>
       </motion.div>
@@ -252,7 +260,7 @@ export default function CustomGrid3() {
           <ArrowUpRight className="absolute text-gray-400 top-2 right-2 w-6 h-6 sm:w-8 sm:h-8" />
           <span className="text-xl sm:text-2xl text-white">Contact</span>
           <div>
-            <span className="text-5xl">Let’s collaborate</span>
+            <span className="text-5xl">Let&apos;s collaborate</span>
             <p>— your idea + my code = something amazing.</p>
           </div>
         </Link>

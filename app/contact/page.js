@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const Page = () => {
   // Animation variants
@@ -27,12 +28,14 @@ const Page = () => {
       {/* Left side - Image */}
       <motion.div
         variants={fadeInUp}
-        className="w-full lg:w-1/2 h-56 sm:h-72 lg:h-full"
+        className="w-full lg:w-1/2 h-56 sm:h-72 lg:h-full relative"
       >
-        <img
+        <Image
           src="https://static.vecteezy.com/system/resources/previews/000/166/530/non_2x/contact-me-illustration-vector.jpg"
           alt="Contact"
-          className="w-full h-full object-cover rounded-xl"
+          fill
+          className="object-cover rounded-xl"
+          priority
         />
       </motion.div>
 
@@ -70,7 +73,9 @@ const Page = () => {
           >
             Send Message
           </motion.button>
-          <h1 className="text-3xl mt-15">"Let’s Build Something Amazing Together 🚀"</h1>
+
+          {/* ✅ Fixed escaped quotes */}
+          <h1 className="text-3xl mt-6">Let’s Build Something Amazing Together 🚀</h1>
         </form>
       </motion.div>
     </motion.div>
