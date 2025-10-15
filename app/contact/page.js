@@ -39,9 +39,9 @@ const Page = () => {
       {/* Contact Form - Centered on laptop */}
       <motion.div
         variants={fadeInUp}
-        className="w-full lg:max-w-[600px] bg-[#0A192F99] p-4 sm:p-6 lg:p-8 rounded-2xl flex flex-col justify-center relative z-10 mt-3 lg:mt-12 mx-auto"
+        className="w-full lg:max-w-[600px] content-card p-4 sm:p-6 lg:p-8 rounded-2xl flex flex-col justify-center relative z-10 mt-3 lg:mt-12 mx-auto"
       >
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white mb-4 text-center">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-4 text-center">
           Get in Touch
         </h2>
         <form className="flex flex-col gap-3 w-full">
@@ -49,24 +49,24 @@ const Page = () => {
             variants={fadeInUp}
             type="text"
             placeholder="Your Name"
-            className="w-full p-3 bg-[#081c3999] rounded-lg border border-white/10 text-white placeholder-gray-400 focus:outline-none"
+            className="w-full p-3 content-card rounded-lg border border-white/10 placeholder-gray-400 focus:outline-none"
           />
           <motion.input
             variants={fadeInUp}
             type="email"
             placeholder="Your Email"
-            className="w-full p-3 bg-[#081c3999] rounded-lg border border-white/10 text-white placeholder-gray-400 focus:outline-none"
+            className="w-full p-3 content-card rounded-lg border border-white/10 placeholder-gray-400 focus:outline-none"
           />
           <motion.textarea
             variants={fadeInUp}
             placeholder="Your Message"
             rows="5"
-            className="w-full p-3 bg-[#081c3999] rounded-lg border border-white/10 text-white placeholder-gray-400 focus:outline-none resize-none"
+            className="w-full p-3 content-card rounded-lg border border-white/10 placeholder-gray-400 focus:outline-none resize-none"
           />
           <motion.button
             variants={fadeInUp}
             type="submit"
-            className="w-full px-5 py-3 bg-[#081c3999] hover:bg-[#10326699] text-white rounded-lg transition mt-2"
+            className="w-full px-5 py-3 content-card hover:bg-gray-700 rounded-lg transition mt-2"
           >
             Send Message
           </motion.button>

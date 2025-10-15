@@ -36,7 +36,7 @@ const Page = () => {
         {/* Box 1 */}
         <motion.div
           variants={boxVariant}
-          className="bg-[#081c3999] rounded-2xl col-span-2 row-span-6 flex flex-col p-2 overflow-hidden h-[84vh]"
+          className="content-card rounded-2xl col-span-2 row-span-6 flex flex-col p-2 overflow-hidden h-[84vh]"
         >
           <div className="relative w-full h-[40vh] mb-4 rounded-2xl overflow-hidden">
             <Image
@@ -48,8 +48,8 @@ const Page = () => {
             />
           </div>
 
-          <div className="text-white flex flex-col flex-1">
-            <span className="text-4xl font-bold mb-3">AIMatrix</span>
+          <div className="flex flex-col flex-1">
+            <span className="text-4xl font-medium mb-3">AIMatrix</span>
             <p className="text-base leading-relaxed flex-1">
               This AI SaaS app offers a suite of productivity tools including
               article and blog generation, image creation, background removal,
@@ -73,7 +73,7 @@ const Page = () => {
         {/* Box 2 */}
         <motion.div
           variants={boxVariant}
-          className="bg-[#081c3999] rounded-2xl col-span-2 row-span-6 flex flex-col p-2 overflow-hidden h-[84vh]"
+          className="content-card rounded-2xl col-span-2 row-span-6 flex flex-col p-2 overflow-hidden h-[84vh]"
         >
           <div className="relative w-full h-[40vh] mb-4 rounded-2xl overflow-hidden">
             <Image
@@ -85,8 +85,8 @@ const Page = () => {
             />
           </div>
 
-          <div className="text-white flex flex-col flex-1">
-            <span className="text-4xl font-bold mb-3">Netflix Clone</span>
+          <div className="flex flex-col flex-1">
+            <span className="text-4xl font-medium mb-3">Netflix Clone</span>
             <p className="text-base leading-relaxed flex-1">
               A sleek Netflix clone app showcasing trending movies, clean UI,
               and interactive user experience.
@@ -115,7 +115,7 @@ const Page = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           transition={{ delay: 0.1 }}
-          className="bg-[#081c3999] rounded-2xl p-2 flex flex-col text-white"
+          className="content-card rounded-2xl p-2 flex flex-col"
         >
           <div className="relative w-full h-[30vh] mb-3 rounded-xl overflow-hidden">
             <Image
@@ -126,7 +126,7 @@ const Page = () => {
             />
           </div>
           <div className="flex flex-col gap-2">
-            <span className="text-2xl font-semibold">AIMatrix</span>
+            <span className="text-2xl font-medium">AIMatrix</span>
             <p className="text-sm leading-relaxed">
               This AI SaaS app offers tools like article/blog generation, image
               creation, background removal, object removal, and resume reviewing
@@ -152,7 +152,7 @@ const Page = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           transition={{ delay: 0.2 }}
-          className="bg-[#081c3999] rounded-2xl p-2 flex flex-col text-white"
+          className="content-card rounded-2xl p-2 flex flex-col"
         >
           <div className="relative w-full h-[30vh] mb-3 rounded-xl overflow-hidden">
             <Image
@@ -163,7 +163,7 @@ const Page = () => {
             />
           </div>
           <div className="flex flex-col gap-2">
-            <span className="text-2xl font-semibold">Netflix Clone</span>
+            <span className="text-2xl font-medium">Netflix Clone</span>
             <p className="text-sm leading-relaxed">
               A sleek mobile-first Netflix clone with clean UI, showcasing
               trending movies and interactive user experience.

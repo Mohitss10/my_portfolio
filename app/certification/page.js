@@ -33,7 +33,7 @@ export default function Page() {
       {/* Box 1 */}
       <motion.div
         variants={item}
-        className="bg-[#081c3999] rounded-2xl overflow-hidden 
+        className="content-card rounded-2xl overflow-hidden 
           h-[40vh] md:h-auto
           col-span-1 md:col-span-2 md:row-span-3"
       >
@@ -43,7 +43,7 @@ export default function Page() {
       {/* Box 2 */}
       <motion.div
         variants={item}
-        className="bg-[#081c3999] rounded-2xl overflow-hidden 
+        className="content-card rounded-2xl overflow-hidden 
           h-[40vh] md:h-auto
           col-span-1 md:col-span-2 md:row-span-3 md:col-start-3"
       >
@@ -53,23 +53,22 @@ export default function Page() {
       {/* Box 3 */}
       <motion.div
         variants={item}
-        className="bg-[#081c3999] rounded-2xl overflow-hidden 
+        className="content-card rounded-2xl overflow-hidden 
           h-[40vh] md:h-auto
           col-span-1 md:col-span-2 md:row-span-3 md:col-start-5"
       >
         <img src="/udemy.png" alt="Box 3" className="w-full h-full object-cover" />
       </motion.div>
 
-      
+      {/* Box 4 */}
       <motion.div
         variants={item}
-        className="bg-[#081c3999] rounded-2xl overflow-hidden 
+        className="content-card rounded-2xl overflow-hidden 
           h-[40vh] md:h-auto
           col-span-1 md:col-span-2 md:row-span-3 md:row-start-4"
       >
         <img src="/prompt.jpg" alt="Box 4" className="w-full h-full object-cover" />
       </motion.div> 
-
     </motion.div>
   );
 }

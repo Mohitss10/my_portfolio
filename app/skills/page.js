@@ -63,7 +63,7 @@ const Page = () => {
     <div className="mx-3 mt-1 mb-3 sm:mt-0 rounded-2xl sm:h-[85.5vh] sm:pt-2 overflow-hidden">
       {/* Desktop/Laptop Grid */}
       <motion.div
-        className="hidden sm:grid gap-3 h-full w-full sm:grid-cols-4 sm:grid-rows-4 text-white text-xl text-center"
+        className="hidden sm:grid gap-3 h-full w-full sm:grid-cols-4 sm:grid-rows-4 text-center"
         variants={containerVariant}
         initial="hidden"
         animate="visible"
@@ -74,7 +74,7 @@ const Page = () => {
             <motion.div
               key={i}
               variants={boxVariant}
-              className={`bg-[#081c3999] rounded-2xl flex flex-col items-center justify-center p-4 text-center
+              className={`content-card rounded-2xl flex flex-col items-center justify-center p-4 text-center
                 ${i === 0 ? "sm:row-span-2" : ""}
                 ${i === 1 ? "sm:row-span-2 sm:col-start-1 sm:row-start-3" : ""}
                 ${i === 2 ? "sm:row-span-2 sm:col-start-2 sm:row-start-1" : ""}
@@ -89,14 +89,14 @@ const Page = () => {
                 <Icon size={80} className={`${tech.color}`} />
               </motion.div>
               <span className="mt-2 text-lg sm:text-xl">{tech.name}</span>
-              <p className="mt-1 text-sm text-gray-300">{tech.desc}</p>
+              <p className="mt-1 text-sm">{tech.desc}</p>
             </motion.div>
           );
         })}
       </motion.div>
 
       {/* Mobile Grid */}
-      <div className="grid sm:hidden gap-3 w-full text-white text-xl font-semibold">
+      <div className="grid sm:hidden gap-3 w-full text-xl font-semibold">
         {techData.map((tech, i) => {
           const Icon = tech.icon;
           return (
@@ -106,7 +106,7 @@ const Page = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="bg-[#081c3999] rounded-2xl flex items-center h-[20vh] px-6 gap-4 py-2"
+              className="content-card rounded-2xl flex items-center h-[20vh] px-6 gap-4 py-2"
             >
               {/* Icon */}
               <motion.div
@@ -119,7 +119,7 @@ const Page = () => {
               {/* Text */}
               <div className="ml-4 text-left w-[75%]">
                 <span className="block text-base sm:text-lg font-semibold">{tech.name}</span>
-                <p className="mt-1 text-sm text-gray-300 leading-snug">{tech.desc}</p>
+                <p className="mt-1 text-sm leading-snug">{tech.desc}</p>
               </div>
             </motion.div>
           );

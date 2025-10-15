@@ -82,27 +82,23 @@ export default function CustomGrid3() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="relative bg-[#0A192F99] h-[60vh] sm:h-auto col-span-1 row-span-1 
+        className="relative content-card h-[60vh] sm:h-auto col-span-1 row-span-1 
           sm:col-span-2 md:col-span-2 lg:col-span-3 md:row-span-2 lg:row-span-4 
-          p-2 rounded-2xl flex flex-col mt-1 sm:mt-0
-          "
+          p-2 rounded-2xl flex flex-col mt-1 sm:mt-0"
       >
-      <Link href="/about" className="flex flex-col justify-between h-full">  
+        <Link href="/about" className="flex flex-col justify-between h-full">
           <div>
-            <ArrowUpRight 
-            
-            
-            className="absolute hover:text-[#6b6b6b] top-4 right-4 w-6 h-6 sm:w-8 sm:h-8" />
-            <span className="text-3xl  sm:text-xl md:text-2xl lg:text-3xl text-white">
+            <ArrowUpRight className="absolute hover:text-[#6b6b6b] top-4 right-4 w-6 h-6 sm:w-8 sm:h-8" />
+            <span className="text-3xl sm:text-xl md:text-2xl lg:text-3xl">
               Hello, I&apos;m Mohit
             </span>
           </div>
 
           <div className="flex flex-col gap-2">
-            <span className="text-5xl sm:text-4xl md:text-5xl lg:text-6xl text-white">
+            <span className="text-5xl sm:text-4xl md:text-5xl lg:text-6xl">
               Full Stack Developer
             </span>
-            <span className="text-2xl sm:text-xl md:text-2xl text-gray-300">
+            <span className="text-2xl sm:text-xl md:text-2xl">
               End-to-end development with a touch of creativity.
             </span>
           </div>
@@ -115,24 +111,23 @@ export default function CustomGrid3() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="relative bg-[#0A192F99] sm:h-auto col-span-1 row-span-1 
+        className="relative content-card sm:h-auto col-span-1 row-span-1 
           sm:row-span-2 md:col-span-2 lg:col-span-2 md:row-span-3 lg:row-span-6 
           xl:col-start-6 xl:row-start-1 flex flex-col justify-between p-2 
-          text-lg sm:text-xl rounded-2xl h-[60vh] 
-          "
+          text-lg sm:text-xl rounded-2xl h-[60vh]"
       >
         <Link
           href="/project"
           className="absolute inset-0 flex flex-col justify-between p-2"
         >
           <ArrowUpRight className="absolute hover:text-[#6b6b6b] top-2 right-2 w-6 h-6 sm:w-8 sm:h-8" />
-          <span className="text-3xl  sm:text-2xl text-white">Projects</span>
-          <div className="gap-2 flex flex-col w-full">
+          <span className="text-3xl sm:text-2xl">Projects</span>
+          <div className="gap-2  flex flex-col w-full">
             {/* AIMatrix */}
-            <div className="p-2 bg-[#081c3999] rounded-2xl">
-              <h3 className="text-3xl font-semibold">AIMatrix</h3>
+            <div className="content-sub rounded-2xl px-2 py-3">
+              <h3 className="text-3xl font-medium">AIMatrix</h3>
               <div className="flex items-center justify-between">
-                <p className="text-lg sm:">AI SaaS web app</p>
+                <p className="text-lg">AI SaaS web app</p>
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
@@ -153,8 +148,8 @@ export default function CustomGrid3() {
             </div>
 
             {/* Netflix Clone */}
-            <div className="p-2 bg-[#081c3999] rounded-2xl">
-              <h3 className="text-3xl font-semibold">Netflix Clone</h3>
+            <div className="content-sub rounded-2xl px-2 py-3">
+              <h3 className="text-3xl font-medium">Netflix Clone</h3>
               <div className="flex items-center justify-between">
                 <p className="text-lg">Movie streaming platform</p>
                 <button
@@ -184,44 +179,48 @@ export default function CustomGrid3() {
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true, amount: 0.2 }}
-  className="relative bg-[#0A192F99] h-[60vh] sm:h-auto col-span-1 row-span-1 
+  className="relative content-card h-[60vh] sm:h-auto col-span-1 row-span-1 
     md:col-span-2 lg:col-span-3 md:row-span-2 lg:row-span-3 xl:col-start-3 
-    xl:row-start-5 flex flex-col justify-between p-2 text-lg sm:text-xl rounded-2xl cursor-pointer
-  "
+    xl:row-start-5 flex flex-col justify-between p-2 text-lg sm:text-xl rounded-2xl cursor-pointer"
 >
   <Link href="/certification" className="flex flex-col justify-between h-full">
     <div>
-      {/* Top-right arrow */}
       <ArrowUpRight className="absolute top-2 right-2 hover:text-[#6b6b6b] w-6 h-6 sm:w-8 sm:h-8" />
-
-      {/* Section title */}
-      <span className="text-3xl sm:text-2xl text-white mb-4">Certificates</span>
+      <span className="text-3xl sm:text-2xl mb-4">Certificates</span>
     </div>
 
-    {/* Certificates grid */}
     <div className="grid grid-cols-1 sm:grid-cols-3 sm:grid-rows-2 gap-2 w-full">
-      <div className="relative bg-[#081c3999] flex items-center rounded-xl px-2 py-4">
+      {/* ✅ JavaScript Certificate */}
+      <div className="relative content-sub group flex items-center rounded-xl px-2 py-4 cursor-pointer">
         JavaScript
-        <LinkIcon className="absolute bottom-2 right-2 w-5 h-5 hover:text-[#6b6b6b]" />
+
       </div>
 
-      <div className="relative bg-[#081c3999] sm:col-span-4 flex items-center  rounded-xl  py-4 px-2">
+      {/* ✅ Prompt Engineering Certificate */}
+      <div className="relative content-sub sm:col-span-4 group flex items-center rounded-xl py-4 px-2 cursor-pointer">
         Prompt Engineering
-        <LinkIcon className="absolute bottom-2 right-2 w-5 h-5 hover:text-[#6b6b6b]" />
+      
       </div>
 
-      <div className="relative bg-[#081c3999] sm:col-span-2 sm:row-start-2 flex items-center px-2 rounded-xl py-4">
+      {/* ✅ HTML, CSS & JS Certificate */}
+      <div className="relative content-sub sm:col-span-2 sm:row-start-2 group flex items-center px-2 rounded-xl py-4 cursor-pointer">
         HTML, CSS & JS
-        <LinkIcon className="absolute bottom-2 right-2 w-5 h-5 hover:text-[#6b6b6b]" />
+     
+
       </div>
 
-      <div className="relative bg-[#081c3999] sm:col-span-3 sm:col-start-3 sm:row-start-2 flex items-center py-4 px-2 rounded-xl ">
+      {/* ✅ TCS Icon Certificate */}
+      <div className="relative content-sub sm:col-span-3 sm:col-start-3 sm:row-start-2 group flex items-center py-4 px-2 rounded-xl cursor-pointer">
         TCS Icon
-        <LinkIcon className="absolute bottom-2 right-2 w-5 h-5 hover:text-[#6b6b6b]" />
+        {/* <LinkIcon className="absolute bottom-2 right-2 w-5 h-5 hover:text-[#6b6b6b]" /> */}
+        {/* <span className="absolute right-8 bottom-2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+          Link
+        </span> */}
       </div>
     </div>
   </Link>
 </motion.div>
+
 
       {/* 🧠 Skills Section */}
       <motion.div
@@ -230,28 +229,27 @@ export default function CustomGrid3() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="relative bg-[#0A192F99] h-[60vh] sm:h-auto col-span-1 row-span-1 
+        className="relative content-card h-[60vh] sm:h-auto col-span-1 row-span-1 
           md:col-span-2 lg:col-span-2 md:row-span-2 lg:row-span-4 xl:col-start-4 
           xl:row-start-1 flex flex-col justify-between p-2 text-lg sm:text-xl 
-          rounded-2xl cursor-pointer overflow-hidden
-          "
+          rounded-2xl cursor-pointer overflow-hidden"
       >
         <Link
           href="/skills"
           className="absolute inset-0 flex flex-col justify-between p-2"
         >
           <ArrowUpRight className="absolute top-2 hover:text-[#6b6b6b] right-2 w-6 h-6 sm:w-8 sm:h-8" />
-          <span className="text-3xl sm:text-2xl text-white">Skills</span>
+          <span className="text-3xl sm:text-2xl">Skills</span>
           <div className="relative mt-6 mb-7 w-full overflow-hidden">
-            <div className="absolute left-0 top-0 h-full w-12 sm:w-16 bg-gradient-to-r from-[#101626] to-transparent z-10" />
-            <div className="absolute right-0 top-0 h-full w-12 sm:w-16 bg-gradient-to-l from-[#101626] to-transparent z-10" />
+            <div className="absolute left-0 top-0 h-full w-12 sm:w-16  z-10" />
+            <div className="absolute right-0 top-0 h-full w-12 sm:w-16  z-10" />
             <div className="flex animate-scroll space-x-6 sm:space-x-8 w-max">
               {logos.concat(logos).map((item, index) => (
                 <div
                   key={`${item.id}-${index}`}
                   className="flex items-center justify-center"
                 >
-                  <item.Icon className="text-gray-300 w-30 h-30 sm:w-16 sm:h-16 lg:w-20 lg:h-20" />
+                  <item.Icon className="logo-icon w-30 h-30 sm:w-16 sm:h-16 lg:w-20 lg:h-20" />
                 </div>
               ))}
             </div>
@@ -265,7 +263,7 @@ export default function CustomGrid3() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="relative bg-[#0A192F99] h-[15vh] sm:h-auto col-span-1 row-span-1 
+        className="relative content-card h-[15vh] sm:h-auto col-span-1 row-span-1 
     md:col-span-1 lg:col-span-2 xl:col-start-6 xl:row-start-7 flex flex-col 
     items-center justify-center text-lg sm:text-xl font-bold rounded-2xl 
     p-4 sm:p-2 transition-shadow duration-300 hover:shadow-xl hover:shadow-gray-900/50"
@@ -315,7 +313,7 @@ export default function CustomGrid3() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="relative bg-[#0A192F99] h-[30vh] sm:h-auto col-span-1 row-span-1 
+        className="relative content-card h-[30vh] sm:h-auto col-span-1 row-span-1 
           md:col-span-2 lg:col-span-2 md:row-span-2 lg:row-span-3 xl:col-start-1 
           xl:row-start-5 flex flex-col p-2 text-lg justify-between sm:text-xl rounded-2xl cursor-pointer
           transition-shadow duration-300 hover:shadow-xl hover:shadow-gray-900/50"
@@ -325,7 +323,7 @@ export default function CustomGrid3() {
           className="absolute inset-0 flex flex-col p-2 justify-between"
         >
           <ArrowUpRight className="absolute hover:text-[#6b6b6b] top-2 right-2 w-6 h-6 sm:w-8 sm:h-8" />
-          <span className="text-3xl sm:text-2xl text-white">Contact</span>
+          <span className="text-3xl sm:text-2xl">Contact</span>
           <div>
             <span className="text-5xl">Let&apos;s collaborate</span>
             <p>— your idea + my code = something amazing.</p>

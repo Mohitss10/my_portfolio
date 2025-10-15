@@ -69,3 +69,51 @@ body {
 .animate-scaleIn {
   animation: scaleIn 0.3s ease-out forwards;
 }
+
+/* 🌞 Light Theme */
+body.light {
+  background-color: #CBCBCB;
+  color: #000000;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.light .content-card {
+  background-color: #EEEEEE;
+  color: black;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* 🌙 Dark Theme */
+body.dark {
+  background: #071a35;
+  color: #d3d3d3;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.dark .content-card {
+  background-color: rgba(9, 21, 41, 0.8);
+  color: #ffffff;
+  box-shadow: none;
+}
+
+/* 🎓 Certificate inner boxes */
+body.dark .content-sub {
+  background-color: #071a35;
+  color: #ffffff;
+
+}
+
+body.light .content-sub {
+  background-color: #CBCBCB; /* subtle light gray-blue */
+  color: #000000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Skills section shadow */
+body.light .content-card.skills {
+  box-shadow: 0 6px 20px rgba(203, 203, 203, 0.6); /* nice CBCBCB shadow */
+}
+
+body.dark .content-card.skills {
+  box-shadow: none; /* keep it subtle in dark mode */
+}
