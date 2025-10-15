@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 // Parent animation (stagger)
 const container = {
@@ -37,7 +38,7 @@ export default function Page() {
           h-[40vh] md:h-auto
           col-span-1 md:col-span-2 md:row-span-3"
       >
-        <img src="/js.png" alt="Box 1" className="w-full h-full object-cover" />
+        <Image src="/js.png" alt="Box 1" className="w-full h-full object-cover" />
       </motion.div>
 
       {/* Box 2 */}
@@ -47,7 +48,7 @@ export default function Page() {
           h-[40vh] md:h-auto
           col-span-1 md:col-span-2 md:row-span-3 md:col-start-3"
       >
-        <img src="/tcs.png" alt="Box 2" className="w-full h-full object-cover" />
+        <Image src="/tcs.png" alt="Box 2" className="w-full h-full object-cover" />
       </motion.div>
 
       {/* Box 3 */}
@@ -57,7 +58,7 @@ export default function Page() {
           h-[40vh] md:h-auto
           col-span-1 md:col-span-2 md:row-span-3 md:col-start-5"
       >
-        <img src="/udemy.png" alt="Box 3" className="w-full h-full object-cover" />
+        <Image src="/udemy.png" alt="Box 3" className="w-full h-full object-cover" />
       </motion.div>
 
       {/* Box 4 */}
@@ -67,7 +68,7 @@ export default function Page() {
           h-[40vh] md:h-auto
           col-span-1 md:col-span-2 md:row-span-3 md:row-start-4"
       >
-        <img src="/prompt.jpg" alt="Box 4" className="w-full h-full object-cover" />
+        <Image src="/prompt.jpg" alt="Box 4" className="w-full h-full object-cover" />
       </motion.div> 
     </motion.div>
   );

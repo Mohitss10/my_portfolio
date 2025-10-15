@@ -1,23 +1,21 @@
+// app/api/contact/route.js
 import nodemailer from "nodemailer";
 
-export const runtime = "node"; // ⚡ this must be at the top in server file
+export const runtime = "node"; // ⚡ server-only runtime
 
 export async function POST(request) {
   try {
     const { name, email, message } = await request.json();
 
     if (!name || !email || !message) {
-      return new Response(
-        JSON.stringify({ error: "All fields are required" }),
-        { status: 400 }
-      );
+      return new Response(JSON.stringify({ error: "All fields are required" }), { status: 400 });
     }
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
         user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        pass: process.env.EMAIL_PASS, // app password
       },
     });
 
@@ -33,13 +31,9 @@ export async function POST(request) {
 
     await transporter.sendMail(mailOptions);
 
-    return new Response(JSON.stringify({ message: "Message sent successfully!" }), {
-      status: 200,
-    });
+    return new Response(JSON.stringify({ message: "Message sent successfully!" }), { status: 200 });
   } catch (err) {
     console.error(err);
-    return new Response(JSON.stringify({ error: "Failed to send message" }), {
-      status: 500,
-    });
+    return new Response(JSON.stringify({ error: "Failed to send message" }), { status: 500 });
   }
 }

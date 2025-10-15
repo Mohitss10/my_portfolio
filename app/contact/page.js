@@ -2,9 +2,14 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const Page = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   const [sending, setSending] = useState(false);
   const [success, setSuccess] = useState(null);
 
@@ -18,7 +23,11 @@ const Page = () => {
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
   };
 
   // Hide popup after 3 seconds
@@ -60,7 +69,7 @@ const Page = () => {
       variants={containerVariant}
       initial="hidden"
       animate="visible"
-      className="min-h-[85.5vh] px-2 sm:p-6 mx-1 mb-3 sm:mt-2 mt-1 rounded-2xl flex flex-col items-center relative overflow-visible"
+      className="min-h-[85.5vh] px-2 sm:p-6 mx-1 mb-2 sm:mt-2 mt-1 rounded-2xl flex flex-col items-center relative overflow-visible"
     >
       {/* Floating popup */}
       <AnimatePresence>
@@ -83,9 +92,11 @@ const Page = () => {
         variants={fadeInUp}
         className="w-full h-56 sm:h-72 relative block lg:hidden"
       >
-        <img
-          src="cover.jpg"
-          className="object-cover rounded-xl shadow-2xl w-full h-full"
+        <Image
+          src="/cover.jpg"
+          alt="Cover"
+          fill
+          className="object-cover rounded-xl shadow-2xl"
         />
       </motion.div>
 
@@ -111,7 +122,9 @@ const Page = () => {
             type="email"
             placeholder="Your Email"
             value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
             className="w-full p-3 content-card rounded-lg border border-white/10 placeholder-gray-400 focus:outline-none"
             required
           />
@@ -120,7 +133,9 @@ const Page = () => {
             placeholder="Your Message"
             rows="5"
             value={formData.message}
-            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, message: e.target.value })
+            }
             className="w-full p-3 content-card rounded-lg border border-white/10 placeholder-gray-400 focus:outline-none resize-none"
             required
           />

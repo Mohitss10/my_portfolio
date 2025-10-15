@@ -58,7 +58,7 @@ const Page = () => {
       >
         {/* Image */}
         <div className="w-full h-[20vh] sm:h-[45vh] relative rounded-lg overflow-hidden">
-          <img
+          <Image
             src="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fh68x0up43hmknl5tjcww.jpg"
             alt="Software Developer"
             fill
