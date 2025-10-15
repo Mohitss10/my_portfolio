@@ -1,7 +1,9 @@
-// app/api/contact/route.js
 import nodemailer from "nodemailer";
 
-export const runtime = "node"; // ⚡ server-only runtime
+// ✅ Correct runtime format for Next.js App Router
+export const config = {
+  runtime: "node",
+};
 
 export async function POST(request) {
   try {
@@ -15,7 +17,7 @@ export async function POST(request) {
       service: "gmail",
       auth: {
         user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS, // app password
+        pass: process.env.EMAIL_PASS, // Gmail App Password
       },
     });
 
