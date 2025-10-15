@@ -31,8 +31,7 @@ const Page = () => {
         className="w-full h-56 sm:h-72 relative block lg:hidden"
       >
         <img
-          src="https://static.vecteezy.com/system/resources/previews/000/166/530/non_2x/contact-me-illustration-vector.jpg"
-          alt="Contact"
+          src="cover.jpg"
           className="object-cover rounded-xl shadow-2xl w-full h-full"
         />
       </motion.div>
