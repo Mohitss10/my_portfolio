@@ -73,20 +73,27 @@ const Page = () => {
     >
       {/* Floating popup */}
       <AnimatePresence>
-        {success !== null && (
-          <motion.div
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -50, opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className={`fixed top-5 left-1/2 -translate-x-1/2 px-6 py-3 rounded-xl text-white shadow-lg z-50 ${
-              success ? "bg-green-400" : "bg-red-400"
-            }`}
-          >
-            {success ? "Message sent successfully!" : "Failed to send message."}
-          </motion.div>
-        )}
-      </AnimatePresence>
+  {success !== null && (
+    <motion.div
+      initial={{ y: -60, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: -60, opacity: 0 }}
+      transition={{ duration: 0.5 }}
+      className={`fixed top-20 left-1/2 -translate-x-1/2 px-4 sm:px-6 py-3 
+        rounded-xl shadow-xl z-50 w-[90%] max-w-sm text-center text-sm sm:text-base font-medium 
+        backdrop-blur-md border border-white/10 
+        ${
+          success
+            ? "popup-success"
+            : "popup-error"
+        }`}
+      style={{ wordWrap: "break-word" }}
+    >
+      {success ? "Message sent successfully! 😉" : "Failed to send message 🤦‍♂️."}
+    </motion.div>
+  )}
+</AnimatePresence>
+
 
       <motion.div
         variants={fadeInUp}
