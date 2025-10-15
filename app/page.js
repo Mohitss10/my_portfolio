@@ -84,7 +84,7 @@ export default function CustomGrid3() {
         viewport={{ once: true, amount: 0.2 }}
         className="relative content-card h-[60vh] sm:h-auto col-span-1 row-span-1 
           sm:col-span-2 md:col-span-2 lg:col-span-3 md:row-span-2 lg:row-span-4 
-          p-2 rounded-2xl flex flex-col mt-1 sm:mt-0"
+          p-2 rounded-2xl flex flex-col sm:mt-0"
       >
         <Link href="/about" className="flex flex-col justify-between h-full">
           <div>
