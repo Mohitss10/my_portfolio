@@ -84,12 +84,15 @@ export default function CustomGrid3() {
         viewport={{ once: true, amount: 0.2 }}
         className="relative bg-[#0A192F99] h-[60vh] sm:h-auto col-span-1 row-span-1 
           sm:col-span-2 md:col-span-2 lg:col-span-3 md:row-span-2 lg:row-span-4 
-          p-2 rounded-2xl flex flex-col cursor-pointer mt-1 sm:mt-0
+          p-2 rounded-2xl flex flex-col mt-1 sm:mt-0
           "
       >
-        <Link href="/about" className="flex flex-col justify-between h-full">
+      <Link href="/about" className="flex flex-col justify-between h-full">  
           <div>
-            <ArrowUpRight className="absolute hover:text-[#6b6b6b] top-4 right-4 w-6 h-6 sm:w-8 sm:h-8" />
+            <ArrowUpRight 
+            
+            
+            className="absolute hover:text-[#6b6b6b] top-4 right-4 w-6 h-6 sm:w-8 sm:h-8" />
             <span className="text-3xl  sm:text-xl md:text-2xl lg:text-3xl text-white">
               Hello, I&apos;m Mohit
             </span>
@@ -115,7 +118,7 @@ export default function CustomGrid3() {
         className="relative bg-[#0A192F99] sm:h-auto col-span-1 row-span-1 
           sm:row-span-2 md:col-span-2 lg:col-span-2 md:row-span-3 lg:row-span-6 
           xl:col-start-6 xl:row-start-1 flex flex-col justify-between p-2 
-          text-lg sm:text-xl rounded-2xl h-[60vh] cursor-pointer
+          text-lg sm:text-xl rounded-2xl h-[60vh] 
           "
       >
         <Link
@@ -197,23 +200,23 @@ export default function CustomGrid3() {
 
     {/* Certificates grid */}
     <div className="grid grid-cols-1 sm:grid-cols-3 sm:grid-rows-2 gap-2 w-full">
-      <div className="relative bg-[#081c3999] flex items-center justify-center rounded-xl py-4">
-        Prompt Engineering
-        <LinkIcon className="absolute bottom-2 right-2 w-5 h-5 hover:text-[#6b6b6b]" />
-      </div>
-
-      <div className="relative bg-[#081c3999] sm:col-span-2 flex items-center justify-center rounded-xl py-4">
+      <div className="relative bg-[#081c3999] flex items-center rounded-xl px-2 py-4">
         JavaScript
         <LinkIcon className="absolute bottom-2 right-2 w-5 h-5 hover:text-[#6b6b6b]" />
       </div>
 
-      <div className="relative bg-[#081c3999] sm:col-span-2 sm:row-start-2 flex items-center justify-center rounded-xl py-4">
-        TCS Icon
+      <div className="relative bg-[#081c3999] sm:col-span-4 flex items-center  rounded-xl  py-4 px-2">
+        Prompt Engineering
         <LinkIcon className="absolute bottom-2 right-2 w-5 h-5 hover:text-[#6b6b6b]" />
       </div>
 
-      <div className="relative bg-[#081c3999] sm:col-span-3 sm:col-start-3 sm:row-start-2 flex items-center justify-center rounded-xl py-4">
+      <div className="relative bg-[#081c3999] sm:col-span-2 sm:row-start-2 flex items-center px-2 rounded-xl py-4">
         HTML, CSS & JS
+        <LinkIcon className="absolute bottom-2 right-2 w-5 h-5 hover:text-[#6b6b6b]" />
+      </div>
+
+      <div className="relative bg-[#081c3999] sm:col-span-3 sm:col-start-3 sm:row-start-2 flex items-center py-4 px-2 rounded-xl ">
+        TCS Icon
         <LinkIcon className="absolute bottom-2 right-2 w-5 h-5 hover:text-[#6b6b6b]" />
       </div>
     </div>
@@ -274,7 +277,7 @@ export default function CustomGrid3() {
             rel="noopener noreferrer"
             className="relative group"
           >
-            <FaInstagram className="w-12 h-12 sm:w-8 sm:h-8 hover:text-pink-500 transition-colors" />
+            <FaInstagram className="w-10 h-10 sm:w-8 sm:h-8 hover:text-pink-500 transition-colors" />
             <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
               Instagram
             </span>
@@ -286,7 +289,7 @@ export default function CustomGrid3() {
             rel="noopener noreferrer"
             className="relative group"
           >
-            <FaGithub className="w-12 h-12 sm:w-8 sm:h-8 hover:text-gray-400 transition-colors" />
+            <FaGithub className="w-10 h-10 sm:w-8 sm:h-8 hover:text-gray-400 transition-colors" />
             <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
               GitHub
             </span>
@@ -298,7 +301,7 @@ export default function CustomGrid3() {
             rel="noopener noreferrer"
             className="relative group"
           >
-            <FaLinkedin className="w-12 h-12 sm:w-8 sm:h-8 hover:text-blue-500 transition-colors" />
+            <FaLinkedin className="w-10 h-10 sm:w-8 sm:h-8 hover:text-blue-500 transition-colors" />
             <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
               LinkedIn
             </span>
