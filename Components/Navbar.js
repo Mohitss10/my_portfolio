@@ -9,14 +9,26 @@ const Navbar = () => {
   const [darkMode, setDarkMode] = useState(true);
   const [resumeOpen, setResumeOpen] = useState(false);
 
-  // Apply theme to <body>
+  // ✅ Load saved theme from localStorage on first render
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme) {
+        setDarkMode(savedTheme === "dark");
+      }
+    }
+  }, []);
+
+  // ✅ Apply theme and save it to localStorage
   useEffect(() => {
     if (darkMode) {
       document.body.classList.add("dark");
       document.body.classList.remove("light");
+      localStorage.setItem("theme", "dark");
     } else {
       document.body.classList.add("light");
       document.body.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
   }, [darkMode]);
 
@@ -31,7 +43,7 @@ const Navbar = () => {
       {/* Top Navbar */}
       <nav
         className={`fixed top-1.8 left-0 sm:w-[98.9vw] mx-2 mt-3 w-[96vw] z-50 rounded-2xl my-0 sm:my-2 px-4 p-3 sm:px-6 sm:py-4 md:px-8 md:py-5
-          ${darkMode ? "bg-[#091529] text-white" : "bg-white text-black shadow-lg"}`}
+          ${darkMode ? "bg-[#091529] text-white" : "bg-[#EEEEEE] text-black shadow-lg"}`}
       >
         <div className="flex flex-wrap items-center justify-between">
           {/* View Resume Button */}
