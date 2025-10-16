@@ -150,7 +150,7 @@ const Page = () => {
             variants={fadeInUp}
             type="submit"
             disabled={sending}
-            className="w-full px-5 py-3 content-card hover:bg-gray-700 rounded-lg transition mt-2"
+            className="w-full px-5 py-3 content-card rounded-lg transition mt-2 shadow-4xl"
           >
             {sending ? "Sending..." : "Send Message"}
           </motion.button>
