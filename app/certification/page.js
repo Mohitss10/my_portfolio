@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -35,41 +36,41 @@ export default function Page() {
       <motion.div
         variants={item}
         className="content-card rounded-2xl overflow-hidden 
-          h-[40vh] md:h-auto
-          col-span-1 md:col-span-2 md:row-span-3"
+          h-[30vh] md:h-auto
+          col-span-1 md:col-span-2 md:row-span-3 relative"
       >
-        <Image src="/js.png" alt="Box 1" className="w-full h-full object-cover" />
+        <Image src="/js.png" alt="Box 1" fill className="object-cover" />
       </motion.div>
 
       {/* Box 2 */}
       <motion.div
         variants={item}
         className="content-card rounded-2xl overflow-hidden 
-          h-[40vh] md:h-auto
-          col-span-1 md:col-span-2 md:row-span-3 md:col-start-3"
+          h-[30vh] md:h-auto
+          col-span-1 md:col-span-2 md:row-span-3 md:col-start-3 relative"
       >
-        <Image src="/tcs.png" alt="Box 2" className="w-full h-full object-cover" />
+        <Image src="/tcs.png" alt="Box 2" fill className="object-cover" />
       </motion.div>
 
       {/* Box 3 */}
       <motion.div
         variants={item}
         className="content-card rounded-2xl overflow-hidden 
-          h-[40vh] md:h-auto
-          col-span-1 md:col-span-2 md:row-span-3 md:col-start-5"
+          h-[30vh] md:h-auto
+          col-span-1 md:col-span-2 md:row-span-3 md:col-start-5 relative"
       >
-        <Image src="/udemy.png" alt="Box 3" className="w-full h-full object-cover" />
+        <Image src="/udemy.png" alt="Box 3" fill className="object-cover" />
       </motion.div>
 
       {/* Box 4 */}
       <motion.div
         variants={item}
         className="content-card rounded-2xl overflow-hidden 
-          h-[40vh] md:h-auto
-          col-span-1 md:col-span-2 md:row-span-3 md:row-start-4"
+          h-[30vh] md:h-auto
+          col-span-1 md:col-span-2 md:row-span-3 md:row-start-4 relative"
       >
-        <Image src="/prompt.jpg" alt="Box 4" className="w-full h-full object-cover" />
-      </motion.div> 
+        <Image src="/prompt.jpg" alt="Box 4" fill className="object-cover" />
+      </motion.div>
     </motion.div>
   );
 }
