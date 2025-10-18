@@ -20,10 +20,10 @@ const boxVariant = {
 };
 
 const projects = [
-  { title: "AIMatrix", desc: "This AI SaaS app offers productivity tools including article/blog generation, image creation, background removal, object removal, and resume reviewing. Designed to save time and enhance creativity for writers, designers, and professionals.", img: "/ai.png", link: "http://aimatrix-client.onrender.com/" },
+  { title: "AIMatrix", desc: "This AI SaaS app offers productivity tools including article/blog generation, image creation, background removal, object removal, and resume reviewing.", img: "/ai.png", link: "http://aimatrix-client.onrender.com/" },
   { title: "Netflix Clone", desc: "A sleek Netflix clone app showcasing trending movies, clean UI, and interactive user experience.", img: "/netflix.png", link: "https://mohitss10.github.io/Netflix-Clone/" },
-  { title: "Indian Cultural Heritage", desc: "A web platform that brings India’s cultural heritage to life using AR technology. Users can explore interactive 3D models of historical landmarks like the Taj Mahal and Ram Mandir.", img: "/heritage.png", link: "https://cultural-heritage-sxd1.vercel.app" },
-  { title: "Personal Portfolio Website", desc: "Made my own Next.js web app. It features a responsive design, dark/light theme toggle, smooth animations, and showcases projects with horizontal scrolling cards for desktop and mobile-friendly layout.", img: "/portfolio.png", link: "https://mohitsayshellotoyou.vercel.app/" },
+  { title: "Indian Cultural Heritage", desc: "A web platform that brings India’s cultural heritage to life using AR technology. Users can explore interactive 3D models of historical landmarks.", img: "/heritage.png", link: "https://cultural-heritage-sxd1.vercel.app" },
+  { title: "Personal Portfolio Website", desc: "Made my own Next.js web app. It features a responsive design, dark/light theme toggle, smooth animations, and showcases projects mobile-friendly layout.", img: "/portfolio.png", link: "https://mohitsayshellotoyou.vercel.app/" },
 ];
 
 const Page = () => {
@@ -60,13 +60,13 @@ const Page = () => {
         {/* Scroll Buttons */}
         <button
           onClick={() => scroll("left")}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 p-2 bg-black/40 dark:bg-white/20 backdrop-blur-md rounded-full hover:scale-110 transition"
+          className="absolute left-5 top-1/2 -translate-y-1/2 z-10 p-2 bg-black/40 dark:bg-white/20 backdrop-blur-md rounded-full hover:scale-110 transition"
         >
           <ChevronLeft className="w-6 h-6 text-white dark:text-black" />
         </button>
         <button
           onClick={() => scroll("right")}
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 p-2 bg-black/40 dark:bg-white/20 backdrop-blur-md rounded-full hover:scale-110 transition"
+          className="absolute right-5 top-1/2 -translate-y-1/2 z-10 p-2 bg-black/40 dark:bg-white/20 backdrop-blur-md rounded-full hover:scale-110 transition"
         >
           <ChevronRight className="w-6 h-6 text-white dark:text-black" />
         </button>
@@ -135,7 +135,7 @@ const Page = () => {
                 className="object-cover"
               />
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col mt-10">
               <span className="text-2xl font-medium">{proj.title}</span>
               <p className="text-sm leading-relaxed">{proj.desc}</p>
 
