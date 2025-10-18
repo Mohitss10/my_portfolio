@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Story+Script&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Story+Script&display=swap");
 @import "tailwindcss";
 
-
 :root {
-  --background: bg-gradient-to-r from-[#081021] to-[#0a1f3f];   /* 🔥 forced global background */
-  --foreground: #D3D3D3;   /* light text for contrast */
+  --background: bg-gradient-to-r from-[#081021] to-[#0a1f3f]; /* 🔥 forced global background */
+  --foreground: #d3d3d3; /* light text for contrast */
 }
 
 @theme inline {
@@ -17,15 +16,15 @@
 /* Optional: if you still want dark mode responsiveness */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #081021;  /* stays the same dark gray */
-    --foreground: #D3D3D3;
+    --background: #081021; /* stays the same dark gray */
+    --foreground: #d3d3d3;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: "Dosis", sans-serif;;
+  font-family: "Dosis", sans-serif;
 }
 
 .story-font {
@@ -46,7 +45,6 @@ body {
   animation: scroll 15s linear infinite;
 }
 
-
 /* Custom Scrollbar */
 .custom-scrollbar::-webkit-scrollbar {
   height: 6px; /* thin */
@@ -62,8 +60,14 @@ body {
 }
 
 @keyframes scaleIn {
-  from { transform: scale(0.95); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .animate-scaleIn {
@@ -72,15 +76,15 @@ body {
 
 /* 🌞 Light Theme */
 body.light {
-  background-color: #CBCBCB;
+  background-color: #cbcbcb;
   color: #000000;
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 body.light .content-card {
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
   color: black;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* 🌙 Dark Theme */
@@ -100,11 +104,10 @@ body.dark .content-card {
 body.dark .content-sub {
   background-color: #071a35;
   color: #ffffff;
-
 }
 
 body.light .content-sub {
-  background-color: #CBCBCB; /* subtle light gray-blue */
+  background-color: #cbcbcb; /* subtle light gray-blue */
   color: #000000;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
@@ -125,19 +128,19 @@ body.dark .content-card.skills {
 }
 
 /* 🌞 Light theme popups */
-/* 🌞 Light theme popups */
+
 body.light .popup-success {
-  background-color: #CBCBCB; /* light tone */
+  background-color: #cbcbcb; /* light tone */
   color: black;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-              0 8px 10px -6px rgba(0, 0, 0, 0.1); /* same as shadow-xl */
+    0 8px 10px -6px rgba(0, 0, 0, 0.1); /* same as shadow-xl */
 }
 
 body.light .popup-error {
-  background-color: #CBCBCB; /* light tone */
+  background-color: #cbcbcb; /* light tone */
   color: black;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-              0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    0 8px 10px -6px rgba(0, 0, 0, 0.1);
 }
 
 /* 🌙 Dark theme popups */
@@ -145,13 +148,61 @@ body.dark .popup-success {
   background-color: #071a35; /* dark tone */
   color: white;
   box-shadow: 0 20px 25px -5px rgba(255, 255, 255, 0.05),
-              0 8px 10px -6px rgba(255, 255, 255, 0.05);
+    0 8px 10px -6px rgba(255, 255, 255, 0.05);
 }
 
 body.dark .popup-error {
   background-color: #071a35; /* dark tone */
   color: white;
   box-shadow: 0 20px 25px -5px rgba(255, 255, 255, 0.05),
-              0 8px 10px -6px rgba(255, 255, 255, 0.05);
+    0 8px 10px -6px rgba(255, 255, 255, 0.05);
 }
 
+
+/* ---------------------- PROJECT CARDS ---------------------- */
+.project-card {
+  border-radius: 1rem;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.3s ease;
+   /* uniform shadow all around */
+}
+
+body.light .project-card {
+  background-color: #ffffff; /* light theme white */
+  color: #000000;
+  box-shadow: 0 0 25px rgba(0,0,0,0.15);
+}
+
+body.dark .project-card {
+  background-color: rgba(9, 21, 41, 0.8); /* dark theme */
+  color: #ffffff;
+ 
+}
+
+/* Inner card section (links/buttons) */
+.project-card .card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+body.light .project-card .card-footer {
+  background-color: #c3c3c3;
+}
+
+body.dark .project-card .card-footer {
+  background-color: rgba(7, 26, 53, 0.8);
+}
+
+/* Hover effect for desktop cards */
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 35px rgba(0,0,0,0.25);
+}
