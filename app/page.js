@@ -194,29 +194,6 @@ export default function CustomGrid3() {
               </div>
             </div>
 
-                      <div className="content-sub rounded-2xl px-2 py-3">
-              <h3 className="text-3xl font-medium">My Portfolio</h3>
-              <div className="flex items-center justify-between">
-                <p className="text-lg">Personal portfolio</p>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    window.open(
-                      "https://mohitsayshellotoyou.vercel.app",
-                      "_blank",
-                      "noopener,noreferrer"
-                    );
-                  }}
-                  className="relative group"
-                >
-                  <LinkIcon className="w-4 h-6 sm:w-4 sm:h-4 hover:text-[#6b6b6b] transition-colors" />
-                  <span className="absolute -left-10 bottom-0 px-2 py-1 text-xs rounded bg-black text-white opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                    Visit
-                  </span>
-                </button>
-              </div>
-            </div>
-
           </div>
         </Link>
       </motion.div>
